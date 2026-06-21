@@ -79,7 +79,7 @@ export function HeroSection() {
               詢盤｜越來越難成交
             </span>
             <span className="block whitespace-nowrap text-[2.25rem] font-semibold leading-[1.12] sm:text-[3.35rem] lg:text-[3.55rem] xl:text-[4.1rem]">
-              展會｜成本越來越高
+              展會越來越難回本
             </span>
             <span className="mt-3 block whitespace-nowrap text-[2.02rem] font-semibold leading-[1.18] text-primary sm:text-[2.7rem] lg:text-[2.9rem] xl:text-[3.4rem]">
               先驗證海外市場需求
