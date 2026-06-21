@@ -5,9 +5,9 @@ import { Navbar } from "@/components/layout/navbar";
 import { siteUrl } from "@/lib/site-url";
 import "./globals.css";
 
-const siteTitle = "海外市場驗證系統｜星啟夢圓行銷";
+const siteTitle = "製造業海外市場驗證系統｜星啟夢圓行銷";
 const siteDescription =
-  "協助台灣製造業透過探廠短影音、廣告與市場測試，先驗證海外需求，再決定是否擴大投入。";
+  "協助台灣製造業透過探廠短影音、海外廣告與市場測試，先驗證海外需求，再決定是否擴大投入。";
 const ogImageUrl = `${siteUrl}/og-image.png`;
 
 export const metadata: Metadata = {
@@ -18,8 +18,8 @@ export const metadata: Metadata = {
   },
   description: siteDescription,
   keywords: [
+    "製造業海外市場驗證",
     "海外市場驗證",
-    "製造業海外行銷",
     "B2B 詢盤",
     "探廠短影音",
     "台灣製造業",
