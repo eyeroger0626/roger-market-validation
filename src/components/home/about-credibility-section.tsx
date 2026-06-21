@@ -1,6 +1,5 @@
-import { BadgeCheck, ImageIcon, MapPinned, Play } from "lucide-react";
+import { BadgeCheck, ImageIcon, MapPinned } from "lucide-react";
 import { AssetImage } from "@/components/ui/asset-image";
-import { YoutubeLazyEmbed } from "@/components/ui/youtube-lazy-embed";
 
 const profileItems = [
   "代表人 Roger",
@@ -115,29 +114,11 @@ export function AboutCredibilitySection() {
             <div className="mx-auto w-full max-w-[15.5rem] rounded-[2.6rem] border border-slate-900 bg-slate-950 p-3 shadow-[0_30px_90px_rgba(15,23,42,0.22)] sm:max-w-[16.25rem]">
               <div className="mx-auto mb-3 h-1.5 w-16 rounded-full bg-white/20" />
               <div className="relative aspect-[9/16] overflow-hidden rounded-[1.75rem] bg-black">
-                <YoutubeLazyEmbed
-                  className="h-full w-full object-cover"
-                  embedUrl="https://www.youtube.com/embed/wcEQFQxpUc0"
-                  fallback={
-                    <div className="flex h-full flex-col justify-between bg-[radial-gradient(circle_at_18%_12%,rgba(244,181,94,0.18),transparent_32%),linear-gradient(160deg,#0b1b2b_0%,#123b5d_100%)] p-5 text-white">
-                      <div className="flex items-center justify-between">
-                        <div className="grid h-11 w-11 place-items-center rounded-2xl bg-white/10 text-accent ring-1 ring-white/10">
-                          <Play aria-hidden="true" className="h-5 w-5" />
-                        </div>
-                        <span className="rounded-full border border-white/10 bg-white/10 px-3 py-1 text-xs font-semibold text-white/70">
-                          Social Trade
-                        </span>
-                      </div>
-                      <div>
-                        <div className="h-2 w-4/5 rounded-full bg-white/28" />
-                        <div className="mt-3 h-2 w-2/3 rounded-full bg-accent/60" />
-                        <div className="mt-5 grid gap-2">
-                          <div className="h-9 rounded-xl border border-white/10 bg-white/10" />
-                          <div className="h-9 rounded-xl border border-white/10 bg-white/10" />
-                        </div>
-                      </div>
-                    </div>
-                  }
+                <iframe
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  className="h-full w-full"
+                  src="https://www.youtube.com/embed/wcEQFQxpUc0"
                   title="Social Trade 深度內容影片"
                 />
               </div>

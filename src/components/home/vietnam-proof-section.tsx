@@ -2,13 +2,10 @@
 
 import {
   BarChart3,
-  ImageIcon,
   MessageSquareText,
   PackageSearch,
 } from "lucide-react";
-import { AssetImage } from "@/components/ui/asset-image";
 import { LightboxImage } from "@/components/ui/lightbox-image";
-import { YoutubeLazyEmbed } from "@/components/ui/youtube-lazy-embed";
 
 const metrics = [
   {
@@ -97,21 +94,11 @@ export function VietnamProofSection() {
           <div className="mx-auto w-full max-w-[15.5rem] rounded-[2.6rem] border border-slate-950 bg-slate-950 p-3 shadow-[0_30px_90px_rgba(0,0,0,0.28)] sm:max-w-[16.25rem]">
             <div className="mx-auto mb-3 h-1.5 w-16 rounded-full bg-white/20" />
             <div className="relative aspect-[9/16] overflow-hidden rounded-[1.75rem] bg-black">
-              <YoutubeLazyEmbed
-                className="h-full w-full object-cover"
-                embedUrl="https://www.youtube.com/embed/yFvh4cWsn9E"
-                fallback={
-                  <AssetImage
-                    alt="越南設備市場驗證影片"
-                    className="object-cover"
-                    fallback={
-                      <div className="flex h-full w-full items-center justify-center bg-white text-primary">
-                        <ImageIcon aria-hidden="true" className="h-8 w-8" />
-                      </div>
-                    }
-                    src="/assets/case-studies/vietnam-equipment/equipment-video-cover.jpg"
-                  />
-                }
+              <iframe
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+                className="h-full w-full"
+                src="https://www.youtube.com/embed/yFvh4cWsn9E"
                 title="越南設備案例短影音"
               />
             </div>
