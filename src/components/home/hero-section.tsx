@@ -81,10 +81,10 @@ export function HeroSection() {
             <span className="block whitespace-nowrap text-[2.25rem] font-semibold leading-[1.12] sm:text-[3.35rem] lg:text-[3.55rem] xl:text-[4.1rem]">
               展會｜成本越來越高
             </span>
-            <span className="mt-3 block whitespace-nowrap text-[1.85rem] font-semibold leading-[1.22] text-primary sm:text-[2.45rem] lg:text-[2.65rem] xl:text-[3.05rem]">
+            <span className="mt-3 block whitespace-nowrap text-[2.02rem] font-semibold leading-[1.18] text-primary sm:text-[2.7rem] lg:text-[2.9rem] xl:text-[3.4rem]">
               先驗證海外市場需求
             </span>
-            <span className="block whitespace-nowrap text-[1.85rem] font-semibold leading-[1.22] text-primary sm:text-[2.45rem] lg:text-[2.65rem] xl:text-[3.05rem]">
+            <span className="block whitespace-nowrap text-[2.02rem] font-semibold leading-[1.18] text-primary sm:text-[2.7rem] lg:text-[2.9rem] xl:text-[3.4rem]">
               再決定是否擴大投入
             </span>
           </h1>
