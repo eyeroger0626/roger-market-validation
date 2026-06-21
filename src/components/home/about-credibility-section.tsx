@@ -1,7 +1,6 @@
 import { BadgeCheck, ImageIcon, MapPinned, Play } from "lucide-react";
 import { AssetImage } from "@/components/ui/asset-image";
-import { AssetVideo } from "@/components/ui/asset-video";
-import { VIDEO_SOURCES } from "@/lib/video-sources";
+import { YoutubeLazyEmbed } from "@/components/ui/youtube-lazy-embed";
 
 const profileItems = [
   "代表人 Roger",
@@ -116,8 +115,9 @@ export function AboutCredibilitySection() {
             <div className="mx-auto w-full max-w-[15.5rem] rounded-[2.6rem] border border-slate-900 bg-slate-950 p-3 shadow-[0_30px_90px_rgba(15,23,42,0.22)] sm:max-w-[16.25rem]">
               <div className="mx-auto mb-3 h-1.5 w-16 rounded-full bg-white/20" />
               <div className="relative aspect-[9/16] overflow-hidden rounded-[1.75rem] bg-black">
-                <AssetVideo
+                <YoutubeLazyEmbed
                   className="h-full w-full object-cover"
+                  embedUrl="https://www.youtube.com/embed/wcEQFQxpUc0"
                   fallback={
                     <div className="flex h-full flex-col justify-between bg-[radial-gradient(circle_at_18%_12%,rgba(244,181,94,0.18),transparent_32%),linear-gradient(160deg,#0b1b2b_0%,#123b5d_100%)] p-5 text-white">
                       <div className="flex items-center justify-between">
@@ -138,7 +138,7 @@ export function AboutCredibilitySection() {
                       </div>
                     </div>
                   }
-                  src={VIDEO_SOURCES.socialTrade}
+                  title="Social Trade 深度內容影片"
                 />
               </div>
             </div>

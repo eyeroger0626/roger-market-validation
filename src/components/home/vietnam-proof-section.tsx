@@ -7,9 +7,8 @@ import {
   PackageSearch,
 } from "lucide-react";
 import { AssetImage } from "@/components/ui/asset-image";
-import { AssetVideo } from "@/components/ui/asset-video";
 import { LightboxImage } from "@/components/ui/lightbox-image";
-import { VIDEO_SOURCES } from "@/lib/video-sources";
+import { YoutubeLazyEmbed } from "@/components/ui/youtube-lazy-embed";
 
 const metrics = [
   {
@@ -98,8 +97,9 @@ export function VietnamProofSection() {
           <div className="mx-auto w-full max-w-[15.5rem] rounded-[2.6rem] border border-slate-950 bg-slate-950 p-3 shadow-[0_30px_90px_rgba(0,0,0,0.28)] sm:max-w-[16.25rem]">
             <div className="mx-auto mb-3 h-1.5 w-16 rounded-full bg-white/20" />
             <div className="relative aspect-[9/16] overflow-hidden rounded-[1.75rem] bg-black">
-              <AssetVideo
+              <YoutubeLazyEmbed
                 className="h-full w-full object-cover"
+                embedUrl="https://www.youtube.com/embed/yFvh4cWsn9E"
                 fallback={
                   <AssetImage
                     alt="越南設備市場驗證影片"
@@ -112,8 +112,7 @@ export function VietnamProofSection() {
                     src="/assets/case-studies/vietnam-equipment/equipment-video-cover.jpg"
                   />
                 }
-                poster="/assets/case-studies/vietnam-equipment/equipment-video-cover.jpg"
-                src={VIDEO_SOURCES.vietnam}
+                title="越南設備案例短影音"
               />
             </div>
           </div>

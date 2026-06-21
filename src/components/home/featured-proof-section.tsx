@@ -8,9 +8,8 @@ import {
   UsersRound,
 } from "lucide-react";
 import { AssetImage } from "@/components/ui/asset-image";
-import { AssetVideo } from "@/components/ui/asset-video";
 import { LightboxImage } from "@/components/ui/lightbox-image";
-import { VIDEO_SOURCES } from "@/lib/video-sources";
+import { YoutubeLazyEmbed } from "@/components/ui/youtube-lazy-embed";
 
 const metrics = [
   {
@@ -77,8 +76,9 @@ export function FeaturedProofSection() {
           <div className="mx-auto w-full max-w-[15.5rem] rounded-[2.6rem] border border-slate-900 bg-slate-950 p-3 shadow-[0_30px_90px_rgba(15,23,42,0.25)] sm:max-w-[16.25rem]">
             <div className="mx-auto mb-3 h-1.5 w-16 rounded-full bg-white/20" />
             <div className="relative aspect-[9/16] overflow-hidden rounded-[1.75rem] bg-black">
-              <AssetVideo
+              <YoutubeLazyEmbed
                 className="h-full w-full object-cover"
+                embedUrl="https://www.youtube.com/embed/l8N34Q1J0aI"
                 fallback={
                   <AssetImage
                     alt="短影音廣告素材"
@@ -91,8 +91,7 @@ export function FeaturedProofSection() {
                     src="/assets/case-studies/usa-food/short-video-cover.jpg"
                   />
                 }
-                poster="/assets/case-studies/usa-food/short-video-cover.jpg"
-                src={VIDEO_SOURCES.usa}
+                title="美國食品市場驗證短影音"
               />
             </div>
           </div>
