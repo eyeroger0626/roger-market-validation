@@ -7,6 +7,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const seoCaseStudyPages = [
     "us-food-ingredient-market-validation",
     "vietnam-vacuum-packaging-market-validation",
+    "vietnam-pcr-market-insight",
   ];
 
   return [
