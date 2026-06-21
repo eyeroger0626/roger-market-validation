@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { motion } from "framer-motion";
 import { Globe2, MessageSquareText, Ship, TrendingUp } from "lucide-react";
@@ -76,10 +76,10 @@ export function HeroSection() {
 
           <h1 className="max-w-3xl tracking-normal text-foreground">
             <span className="block whitespace-nowrap text-[2.25rem] font-semibold leading-[1.12] sm:text-[3.35rem] lg:text-[3.55rem] xl:text-[4.1rem]">
-              詢盤越來越難成交
+              詢盤｜越來越難成交
             </span>
             <span className="block whitespace-nowrap text-[2.25rem] font-semibold leading-[1.12] sm:text-[3.35rem] lg:text-[3.55rem] xl:text-[4.1rem]">
-              展會成本越來越高
+              展會｜成本越來越高
             </span>
             <span className="mt-3 block whitespace-nowrap text-[1.85rem] font-semibold leading-[1.22] text-primary sm:text-[2.45rem] lg:text-[2.65rem] xl:text-[3.05rem]">
               先驗證海外市場需求
@@ -161,3 +161,4 @@ export function HeroSection() {
     </section>
   );
 }
+

@@ -5,25 +5,25 @@ import { Navbar } from "@/components/layout/navbar";
 import { siteUrl } from "@/lib/site-url";
 import "./globals.css";
 
-const siteTitle = "Roger｜製造業海外市場驗證";
+const siteTitle = "海外市場驗證系統｜星啟夢圓行銷";
 const siteDescription =
-  "協助台灣製造業以短影音、內容素材與海外廣告測試，低成本驗證海外市場需求、詢盤品質與潛在商機。";
+  "協助台灣製造業透過探廠短影音、廣告與市場測試，先驗證海外需求，再決定是否擴大投入。";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
     default: siteTitle,
-    template: "%s｜Roger",
+    template: "%s｜星啟夢圓行銷",
   },
   description: siteDescription,
   keywords: [
-    "製造業海外行銷",
     "海外市場驗證",
+    "製造業海外行銷",
     "B2B 詢盤",
-    "短影音引流",
+    "探廠短影音",
     "台灣製造業",
     "外銷開發",
-    "工業會",
+    "海外B2B拓客系統",
     "Meta Ads",
     "Lead Generation",
   ],
@@ -39,13 +39,13 @@ export const metadata: Metadata = {
     type: "website",
     locale: "zh_TW",
     url: "/",
-    siteName: "星啟夢圓行銷有限公司",
+    siteName: "星啟夢圓行銷",
     images: [
       {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Roger 製造業海外市場驗證",
+        alt: siteTitle,
       },
     ],
   },
