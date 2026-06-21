@@ -1,11 +1,13 @@
 "use client";
 
 import {
+  ArrowRight,
   BadgeDollarSign,
   CheckCircle2,
   ImageIcon,
   UsersRound,
 } from "lucide-react";
+import Link from "next/link";
 import { AssetImage } from "@/components/ui/asset-image";
 import { LightboxImage } from "@/components/ui/lightbox-image";
 
@@ -219,6 +221,16 @@ export function FeaturedProofSection() {
               />
             </div>
           </article>
+        </div>
+
+        <div className="mt-10 flex justify-center">
+          <Link
+            className="inline-flex h-12 items-center justify-center rounded-full bg-primary px-7 text-sm font-semibold text-white shadow-soft transition hover:bg-[#0d2f4d]"
+            href="/case-studies/us-food-ingredient-market-validation"
+          >
+            查看完整案例
+            <ArrowRight aria-hidden="true" className="ml-2 h-4 w-4" />
+          </Link>
         </div>
       </div>
     </section>

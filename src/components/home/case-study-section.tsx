@@ -11,7 +11,7 @@ const caseHighlights = [
     industry: "食品製造業",
     market: "美國",
     image: "/assets/case-studies/usa-food/meta-ads-result.jpg",
-    href: "/case-studies/case-1",
+    href: "/case-studies/us-food-ingredient-market-validation",
     metrics: ["100 USD", "40+ 採購商名單", "1 筆樣品單進展"],
   },
   {
