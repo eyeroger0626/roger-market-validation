@@ -223,12 +223,19 @@ export function FeaturedProofSection() {
           </article>
         </div>
 
-        <div className="mt-10 flex justify-center">
+        <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
           <Link
             className="inline-flex h-12 items-center justify-center rounded-full bg-primary px-7 text-sm font-semibold text-white shadow-soft transition hover:bg-[#0d2f4d]"
             href="/case-studies/us-food-ingredient-market-validation"
           >
             查看完整案例
+            <ArrowRight aria-hidden="true" className="ml-2 h-4 w-4" />
+          </Link>
+          <Link
+            className="inline-flex h-12 items-center justify-center rounded-full border border-primary/15 bg-white px-7 text-sm font-semibold text-primary shadow-sm transition hover:bg-background"
+            href="/case-studies/vietnam-vacuum-packaging-market-validation"
+          >
+            越南設備市場驗證案例
             <ArrowRight aria-hidden="true" className="ml-2 h-4 w-4" />
           </Link>
         </div>
