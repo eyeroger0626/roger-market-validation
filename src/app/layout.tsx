@@ -8,6 +8,7 @@ import "./globals.css";
 const siteTitle = "海外市場驗證系統｜星啟夢圓行銷";
 const siteDescription =
   "協助台灣製造業透過探廠短影音、廣告與市場測試，先驗證海外需求，再決定是否擴大投入。";
+const ogImageUrl = `${siteUrl}/og-image.png`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -38,11 +39,11 @@ export const metadata: Metadata = {
     description: siteDescription,
     type: "website",
     locale: "zh_TW",
-    url: "/",
+    url: siteUrl,
     siteName: "星啟夢圓行銷",
     images: [
       {
-        url: "/opengraph-image",
+        url: ogImageUrl,
         width: 1200,
         height: 630,
         alt: siteTitle,
@@ -53,7 +54,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: siteTitle,
     description: siteDescription,
-    images: ["/opengraph-image"],
+    images: [ogImageUrl],
   },
 };
 
