@@ -22,46 +22,68 @@ const fields = [
 ];
 
 const recipientEmail = "eyeroger0626@gmail.com";
-const emailSubject = "海外市場驗證初步評估申請";
 
 export function ContactSection() {
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    const formData = new FormData(event.currentTarget);
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+    const companyName = String(formData.get("company") ?? "").trim();
     const email = String(formData.get("email") ?? "").trim();
     const contact = String(formData.get("contact") ?? "").trim();
 
-    if (!email && !contact) {
+    if (!companyName) {
       setSubmitted(false);
-      setError("請至少填寫 Email 或 Line ID / 電話，方便我們聯繫您。");
+      setError("????????");
       return;
     }
 
-    const body = [
-      "海外市場驗證初步評估申請",
-      "",
-      `公司名稱：${String(formData.get("company") ?? "").trim()}`,
-      `聯絡人姓名：${String(formData.get("name") ?? "").trim()}`,
-      `職稱：${String(formData.get("title") ?? "").trim()}`,
-      `Email：${email}`,
-      `Line ID 或電話：${contact}`,
-      `主要產品：${String(formData.get("product") ?? "").trim()}`,
-      `想測試的海外市場：${String(formData.get("market") ?? "").trim()}`,
-      "",
-      "目前外銷狀況 / 想解決的問題：",
-      String(formData.get("message") ?? "").trim(),
-    ].join("\n");
+    if (!email && !contact) {
+      setSubmitted(false);
+      setError("????? Email ? Line ID / ???????????");
+      return;
+    }
 
-    const mailtoUrl = `mailto:${recipientEmail}?subject=${encodeURIComponent(
-      emailSubject,
-    )}&body=${encodeURIComponent(body)}`;
-
-    window.location.href = mailtoUrl;
+    setIsSubmitting(true);
     setError("");
-    setSubmitted(true);
+    setSubmitted(false);
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          companyName,
+          contactName: String(formData.get("name") ?? "").trim(),
+          title: String(formData.get("title") ?? "").trim(),
+          email,
+          lineOrPhone: contact,
+          product: String(formData.get("product") ?? "").trim(),
+          targetMarket: String(formData.get("market") ?? "").trim(),
+          currentProblem: String(formData.get("message") ?? "").trim(),
+        }),
+      });
+      const result = (await response.json()) as {
+        success?: boolean;
+        error?: string;
+      };
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.error);
+      }
+
+      form.reset();
+      setSubmitted(true);
+    } catch {
+      setSubmitted(false);
+      setError("?????????????? Email ?????");
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return (
@@ -133,15 +155,16 @@ export function ContactSection() {
 
               <button
                 className="inline-flex h-12 w-full items-center justify-center rounded-full bg-primary px-7 text-sm font-semibold text-white shadow-soft transition hover:bg-[#0d2f4d] focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 sm:w-fit"
+                disabled={isSubmitting}
                 type="submit"
               >
                 <Send aria-hidden="true" className="mr-2 h-4 w-4" />
-                送出初步評估
+                {isSubmitting ? "送出中..." : "送出初步評估"}
               </button>
 
               {submitted ? (
                 <div className="rounded-2xl border border-secondary/20 bg-secondary/10 p-4 text-sm font-semibold text-primary">
-                  感謝填寫，請確認您的 Email 視窗是否已開啟，我們將盡快與您聯繫。
+                  感謝填寫，我們已收到您的需求，將盡快與您聯繫。
                 </div>
               ) : null}
 
@@ -154,7 +177,6 @@ export function ContactSection() {
 
             <div className="mt-8 grid gap-3 border-t border-border pt-6 text-sm leading-6 text-muted">
               <a
-                href={`mailto:${recipientEmail}`}
                 className="flex min-w-0 items-center gap-3 break-all transition hover:text-primary"
               >
                 <Mail aria-hidden="true" className="h-4 w-4 text-primary" />
