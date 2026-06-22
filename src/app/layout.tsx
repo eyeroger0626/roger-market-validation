@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
+import { GoogleAnalytics } from "@/components/analytics/google-analytics";
 import { Footer } from "@/components/layout/footer";
 import { Navbar } from "@/components/layout/navbar";
 import { siteUrl } from "@/lib/site-url";
@@ -9,6 +10,8 @@ const siteTitle = "製造業海外市場驗證系統｜星啟夢圓行銷";
 const siteDescription =
   "協助台灣製造業透過探廠短影音、海外廣告與市場測試，先驗證海外需求，再決定是否擴大投入。";
 const ogImageUrl = `${siteUrl}/og-image.png`;
+const googleSiteVerification =
+  process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -36,6 +39,11 @@ export const metadata: Metadata = {
     shortcut: "/icon.png",
     apple: "/icon.png",
   },
+  verification: googleSiteVerification
+    ? {
+        google: googleSiteVerification,
+      }
+    : undefined,
   openGraph: {
     title: siteTitle,
     description: siteDescription,
@@ -73,6 +81,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="zh-Hant">
       <body>
+        <GoogleAnalytics />
         <div className="flex min-h-screen flex-col bg-background text-foreground">
           <Navbar />
           <main className="flex-1">{children}</main>
