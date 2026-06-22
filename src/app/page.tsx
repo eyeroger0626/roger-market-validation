@@ -1,6 +1,7 @@
 import { AboutCredibilitySection } from "@/components/home/about-credibility-section";
 import { ContactSection } from "@/components/home/contact-section";
 import { FaqSection } from "@/components/home/faq-section";
+import { FeaturedInsightsSection } from "@/components/home/featured-insights-section";
 import { FeaturedProofSection } from "@/components/home/featured-proof-section";
 import { HeroSection } from "@/components/home/hero-section";
 import { MarketValidationProgramSection } from "@/components/home/market-validation-program-section";
@@ -18,6 +19,7 @@ export default function HomePage() {
       <MarketValidationProgramSection />
       <AboutCredibilitySection />
       <WhyUsSection />
+      <FeaturedInsightsSection />
       <FaqSection />
       <ContactSection />
     </>
