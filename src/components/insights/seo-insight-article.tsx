@@ -1,4 +1,4 @@
-import { ArrowRight, CheckCircle2, Clock3, FileText, Search, Video } from "lucide-react";
+﻿import { ArrowRight, CheckCircle2, Clock3, FileText, Search, Video } from "lucide-react";
 import Link from "next/link";
 import { MarketValidationAuthorBlock } from "@/components/author/market-validation-author-block";
 import type { InsightArticle } from "@/lib/insights";
@@ -39,10 +39,10 @@ export function SeoInsightArticle({ article }: SeoInsightArticleProps) {
           <div className="rounded-[2rem] border border-border/80 bg-white p-6 shadow-[0_30px_90px_rgba(15,23,42,0.12)]">
             <div className="grid gap-4 sm:grid-cols-2">
               {[
-                { label: "內容主題", value: "海外開發", icon: Search },
-                { label: "文章類型", value: "SEO Insight", icon: FileText },
-                { label: "核心工具", value: "短影音", icon: Video },
-                { label: "收錄目標", value: "Google", icon: Clock3 },
+                { label: "核心問題", value: "詢盤難成交", icon: Search },
+                { label: "解決方式", value: "先驗證市場", icon: FileText },
+                { label: "驗證工具", value: "短影音＋海外廣告", icon: Video },
+                { label: "目標結果", value: "取得買家訊號", icon: Clock3 },
               ].map((item) => {
                 const Icon = item.icon;
 
@@ -145,3 +145,4 @@ export function SeoInsightArticle({ article }: SeoInsightArticleProps) {
     </main>
   );
 }
+
