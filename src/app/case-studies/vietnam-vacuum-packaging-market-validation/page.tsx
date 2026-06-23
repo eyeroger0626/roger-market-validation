@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { MarketValidationAuthorBlock } from "@/components/author/market-validation-author-block";
 import {
   ArrowRight,
   BadgeDollarSign,
@@ -431,6 +432,8 @@ export default function VietnamVacuumPackagingMarketValidationPage() {
           </p>
         </div>
       </section>
+
+      <MarketValidationAuthorBlock />
 
       <section className="bg-white py-20 sm:py-24">
         <div className="mx-auto w-full max-w-7xl px-6 lg:px-8">
