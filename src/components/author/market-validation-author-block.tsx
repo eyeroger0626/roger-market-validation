@@ -75,10 +75,10 @@ export function MarketValidationAuthorBlock() {
             </div>
 
             <figure className="border-t border-border/70 bg-primary/[0.03] p-5 sm:p-7 lg:border-l lg:border-t-0">
-              <div className="relative aspect-[4/3] overflow-hidden rounded-[1.5rem] border border-white bg-white shadow-[0_22px_70px_rgba(15,23,42,0.14)]">
+              <div className="relative h-[650px] overflow-hidden rounded-[1.5rem] border border-white bg-white shadow-[0_22px_70px_rgba(15,23,42,0.14)] sm:h-[700px] lg:h-[740px]">
                 <Image
                   alt="Roger 海外市場驗證系統創建者，協助台灣製造業取得海外詢盤"
-                  className="object-cover"
+                  className="object-contain object-center"
                   fill
                   sizes="(min-width: 1024px) 40vw, 100vw"
                   src="/images/roger-market-validation-system.JPG"
