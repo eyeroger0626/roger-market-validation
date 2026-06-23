@@ -1,20 +1,26 @@
 import Image from "next/image";
-import Link from "next/link";
-import { ArrowRight, BadgeCheck, Globe2 } from "lucide-react";
+import { BadgeCheck } from "lucide-react";
 
-const verifiedMarkets = ["美國", "越南", "歐洲", "菲律賓"];
-
-const relatedCases = [
+const resultCards = [
   {
-    title: "美國食品市場驗證",
-    description:
-      "100 USD 測試預算，4 天取得 40+ 筆美國採購商名單，平均 CPL 2.38 USD。",
-    href: "/case-studies/us-food-ingredient-market-validation",
+    title: "美國市場驗證",
+    value: "100 USD",
+    detail: "40+ 採購商名單",
   },
   {
     title: "越南設備市場驗證",
-    description: "300 USD 取得 129 筆 B2B 詢盤，平均 CPL 2.33 USD。",
-    href: "/case-studies/vietnam-vacuum-packaging-market-validation",
+    value: "300 USD",
+    detail: "129 筆 B2B 詢盤",
+  },
+  {
+    title: "已驗證市場",
+    value: "美國｜越南",
+    detail: "歐洲｜菲律賓",
+  },
+  {
+    title: "驗證方式",
+    value: "短影音｜海外廣告",
+    detail: "市場測試",
   },
 ];
 
@@ -42,51 +48,29 @@ export function MarketValidationAuthorBlock() {
                 協助台灣製造業透過探廠短影音、海外廣告測試與市場驗證，在投入展會、阿里國際站或海外開發之前，先取得真實市場需求訊號。
               </p>
 
-              <div className="mt-7">
-                <div className="flex items-center gap-2 text-sm font-semibold text-primary">
-                  <Globe2 aria-hidden="true" className="h-4 w-4 text-accent" />
-                  已驗證市場
-                </div>
-                <div className="mt-3 flex flex-wrap gap-2">
-                  {verifiedMarkets.map((market) => (
-                    <span
-                      className="rounded-full border border-primary/10 bg-white px-4 py-2 text-sm font-semibold text-primary shadow-sm"
-                      key={market}
-                    >
-                      {market}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              <div className="mt-8">
-                <p className="text-sm font-semibold text-primary">相關案例：</p>
-                <div className="mt-4 grid gap-3 sm:grid-cols-2">
-                  {relatedCases.map((item) => (
-                    <Link
-                      className="group rounded-[1.25rem] border border-border bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-primary/20 hover:shadow-[0_18px_50px_rgba(18,59,93,0.1)]"
-                      href={item.href}
-                      key={item.href}
-                    >
-                      <div className="flex items-start justify-between gap-4">
-                        <BadgeCheck
-                          aria-hidden="true"
-                          className="mt-1 h-5 w-5 shrink-0 text-accent"
-                        />
-                        <ArrowRight
-                          aria-hidden="true"
-                          className="h-4 w-4 shrink-0 text-primary transition group-hover:translate-x-0.5"
-                        />
-                      </div>
-                      <h3 className="mt-4 text-base font-semibold leading-6 text-foreground">
-                        {item.title}
-                      </h3>
-                      <p className="mt-3 text-sm leading-6 text-muted">
-                        {item.description}
+              <div className="mt-8 grid gap-3 sm:grid-cols-2">
+                {resultCards.map((card) => (
+                  <article
+                    className="rounded-[1.25rem] border border-primary/10 bg-white p-5 shadow-sm"
+                    key={card.title}
+                  >
+                    <div className="flex items-center gap-2">
+                      <BadgeCheck
+                        aria-hidden="true"
+                        className="h-5 w-5 shrink-0 text-accent"
+                      />
+                      <p className="text-sm font-semibold text-primary">
+                        {card.title}
                       </p>
-                    </Link>
-                  ))}
-                </div>
+                    </div>
+                    <p className="mt-4 text-2xl font-semibold leading-tight text-foreground">
+                      {card.value}
+                    </p>
+                    <p className="mt-2 text-sm font-semibold leading-6 text-muted">
+                      {card.detail}
+                    </p>
+                  </article>
+                ))}
               </div>
             </div>
 
@@ -97,7 +81,7 @@ export function MarketValidationAuthorBlock() {
                   className="object-cover"
                   fill
                   sizes="(min-width: 1024px) 40vw, 100vw"
-                  src="/images/roger-market-validation-system.jpg"
+                  src="/images/roger-market-validation-system.JPG"
                 />
               </div>
               <figcaption className="mt-4 text-center text-sm font-medium text-muted">
