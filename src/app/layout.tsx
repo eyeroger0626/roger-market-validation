@@ -3,13 +3,13 @@ import type { ReactNode } from "react";
 import { GoogleAnalytics } from "@/components/analytics/google-analytics";
 import { Footer } from "@/components/layout/footer";
 import { Navbar } from "@/components/layout/navbar";
+import { socialShareImage, socialShareImageUrl } from "@/lib/social-share";
 import { siteUrl } from "@/lib/site-url";
 import "./globals.css";
 
 const siteTitle = "製造業海外市場驗證系統｜星啟夢圓行銷";
 const siteDescription =
   "協助台灣製造業透過探廠短影音、海外廣告與市場測試，先驗證海外需求，再決定是否擴大投入。";
-const ogImageUrl = `${siteUrl}/og-image.png`;
 const googleSiteVerification =
   process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION;
 
@@ -51,20 +51,13 @@ export const metadata: Metadata = {
     locale: "zh_TW",
     url: siteUrl,
     siteName: "星啟夢圓行銷",
-    images: [
-      {
-        url: ogImageUrl,
-        width: 1200,
-        height: 630,
-        alt: siteTitle,
-      },
-    ],
+    images: [socialShareImage],
   },
   twitter: {
     card: "summary_large_image",
     title: siteTitle,
     description: siteDescription,
-    images: [ogImageUrl],
+    images: [socialShareImageUrl],
   },
 };
 

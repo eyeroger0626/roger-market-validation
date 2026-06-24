@@ -1,6 +1,7 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import { MarketValidationAuthorBlock } from "@/components/author/market-validation-author-block";
+import { socialShareImage, socialShareImageUrl } from "@/lib/social-share";
 import {
   ArrowRight,
   BadgeDollarSign,
@@ -46,11 +47,13 @@ export const metadata: Metadata = {
     description: pageDescription,
     type: "article",
     locale: "zh_TW",
+    images: [socialShareImage],
   },
   twitter: {
     card: "summary_large_image",
     title: pageTitle,
     description: pageDescription,
+    images: [socialShareImageUrl],
   },
 };
 
@@ -527,3 +530,6 @@ export default function VietnamPcrMarketInsightPage() {
     </main>
   );
 }
+
+
+

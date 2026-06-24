@@ -24,6 +24,7 @@ import { AssetImage } from "@/components/ui/asset-image";
 import { AssetVideo } from "@/components/ui/asset-video";
 import { LightboxImage } from "@/components/ui/lightbox-image";
 import { caseStudies, getCaseStudy } from "@/lib/case-studies";
+import { socialShareImage, socialShareImageUrl } from "@/lib/social-share";
 import { VIDEO_SOURCES } from "@/lib/video-sources";
 
 type CaseStudyPageProps = {
@@ -116,6 +117,17 @@ export async function generateMetadata({ params }: CaseStudyPageProps) {
   return {
     title: caseStudy?.title ?? "Case Study",
     description: caseStudy?.summary ?? "",
+    openGraph: {
+      title: caseStudy?.title ?? "Case Study",
+      description: caseStudy?.summary ?? "",
+      images: [socialShareImage],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: caseStudy?.title ?? "Case Study",
+      description: caseStudy?.summary ?? "",
+      images: [socialShareImageUrl],
+    },
   };
 }
 

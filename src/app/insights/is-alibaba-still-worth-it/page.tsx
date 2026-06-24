@@ -1,6 +1,7 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { SeoInsightArticle } from "@/components/insights/seo-insight-article";
 import { getInsightArticle } from "@/lib/insights";
+import { socialShareImage, socialShareImageUrl } from "@/lib/social-share";
 import { siteUrl } from "@/lib/site-url";
 
 const article = getInsightArticle("is-alibaba-still-worth-it")!;
@@ -19,14 +20,18 @@ export const metadata: Metadata = {
     type: "article",
     locale: "zh_TW",
     url: pageUrl,
+    images: [socialShareImage],
   },
   twitter: {
     card: "summary_large_image",
     title: article.title,
     description: article.description,
+    images: [socialShareImageUrl],
   },
 };
 
 export default function IsAlibabaStillWorthItPage() {
   return <SeoInsightArticle article={article} />;
 }
+
+

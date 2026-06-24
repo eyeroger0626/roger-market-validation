@@ -1,6 +1,7 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import { MarketValidationAuthorBlock } from "@/components/author/market-validation-author-block";
+import { socialShareImage, socialShareImageUrl } from "@/lib/social-share";
 import {
   ArrowRight,
   BadgeDollarSign,
@@ -27,6 +28,7 @@ export const metadata: Metadata = {
       "台灣食品原料供應商透過海外市場驗證系統，在4天內取得42筆美國詢盤並完成樣品付款，驗證美國市場需求。",
     type: "article",
     locale: "zh_TW",
+    images: [socialShareImage],
   },
   twitter: {
     card: "summary_large_image",
@@ -34,6 +36,7 @@ export const metadata: Metadata = {
       "美國食品原料市場驗證案例｜4天取得42筆詢盤並完成樣品付款｜星啟夢圓行銷",
     description:
       "台灣食品原料供應商透過海外市場驗證系統，在4天內取得42筆美國詢盤並完成樣品付款，驗證美國市場需求。",
+    images: [socialShareImageUrl],
   },
 };
 
@@ -475,3 +478,6 @@ export default function UsFoodIngredientMarketValidationPage() {
     </main>
   );
 }
+
+
+
