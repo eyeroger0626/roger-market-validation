@@ -9,6 +9,10 @@ type SeoInsightArticleProps = {
 
 export function SeoInsightArticle({ article }: SeoInsightArticleProps) {
   const [leadSection, ...bodySections] = article.sections;
+  const ctaTitle = article.cta?.title ?? "想先確認海外市場是否真的有需求？";
+  const ctaDescription =
+    article.cta?.description ??
+    "透過短影音、廣告測試與詢盤分析，先驗證市場反應，再決定是否擴大投入。";
 
   return (
     <main className="bg-background">
@@ -126,10 +130,10 @@ export function SeoInsightArticle({ article }: SeoInsightArticleProps) {
                 Market Validation CTA
               </p>
               <h2 className="mt-4 text-3xl font-semibold leading-tight text-foreground sm:text-4xl">
-                想先確認海外市場是否真的有需求？
+                {ctaTitle}
               </h2>
               <p className="mt-5 text-base leading-8 text-muted sm:text-lg">
-                透過短影音、廣告測試與詢盤分析，先驗證市場反應，再決定是否擴大投入。
+                {ctaDescription}
               </p>
             </div>
             <Link

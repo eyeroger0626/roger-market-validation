@@ -1,0 +1,18 @@
+{
+  "name": "星啟夢圓行銷｜製造業海外獲客系統",
+  "short_name": "星啟夢圓行銷",
+  "description": "協助台灣製造業透過探廠短影音、海外廣告與市場測試，先驗證海外需求，再決定是否擴大投入。",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0f2a44",
+  "icons": [
+    {
+      "src": "/icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

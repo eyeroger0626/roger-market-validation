@@ -7,27 +7,51 @@ import { socialShareImage, socialShareImageUrl } from "@/lib/social-share";
 import { siteUrl } from "@/lib/site-url";
 import "./globals.css";
 
-const siteTitle = "製造業海外市場驗證系統｜星啟夢圓行銷";
+const siteTitle = "星啟夢圓行銷｜製造業海外獲客系統";
 const siteDescription =
   "協助台灣製造業透過探廠短影音、海外廣告與市場測試，先驗證海外需求，再決定是否擴大投入。";
+const organizationName = "星啟夢圓行銷";
+const organizationLegalName = "星啟夢圓行銷有限公司";
 const googleSiteVerification =
   process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION;
+
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: organizationName,
+  alternateName: organizationName,
+  url: siteUrl,
+  description: siteDescription,
+  inLanguage: "zh-Hant-TW",
+};
+
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: organizationName,
+  legalName: organizationLegalName,
+  url: siteUrl,
+  logo: `${siteUrl}/logo.png`,
+  description: siteDescription,
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
     default: siteTitle,
-    template: "%s｜星啟夢圓行銷",
+    template: `%s｜${organizationName}`,
   },
+  applicationName: siteTitle,
   description: siteDescription,
   keywords: [
+    "製造業海外獲客系統",
     "製造業海外市場驗證",
     "海外市場驗證",
     "B2B 詢盤",
-    "探廠短影音",
+    "短影音引流",
     "台灣製造業",
     "外銷開發",
-    "海外B2B拓客系統",
+    "海外B2B拓客",
     "Meta Ads",
     "Lead Generation",
   ],
@@ -39,6 +63,7 @@ export const metadata: Metadata = {
     shortcut: "/icon.png",
     apple: "/icon.png",
   },
+  manifest: "/manifest.json",
   verification: googleSiteVerification
     ? {
         google: googleSiteVerification,
@@ -50,7 +75,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "zh_TW",
     url: siteUrl,
-    siteName: "星啟夢圓行銷",
+    siteName: siteTitle,
     images: [socialShareImage],
   },
   twitter: {
@@ -75,6 +100,16 @@ export default function RootLayout({ children }: RootLayoutProps) {
     <html lang="zh-Hant">
       <body>
         <GoogleAnalytics />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationJsonLd),
+          }}
+        />
         <div className="flex min-h-screen flex-col bg-background text-foreground">
           <Navbar />
           <main className="flex-1">{children}</main>
