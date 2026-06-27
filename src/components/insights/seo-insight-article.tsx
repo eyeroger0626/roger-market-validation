@@ -1,4 +1,5 @@
 ﻿import { ArrowRight, CheckCircle2, Clock3, FileText, Search, Video } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { MarketValidationAuthorBlock } from "@/components/author/market-validation-author-block";
 import type { InsightArticle } from "@/lib/insights";
@@ -13,6 +14,28 @@ export function SeoInsightArticle({ article }: SeoInsightArticleProps) {
   const ctaDescription =
     article.cta?.description ??
     "透過短影音、廣告測試與詢盤分析，先驗證市場反應，再決定是否擴大投入。";
+
+  const renderParagraphs = (
+    section: InsightArticle["sections"][number],
+  ) =>
+    section.paragraphs.map((paragraph, index) => (
+      <div className="contents" key={`${paragraph}-${index}`}>
+        <p>{paragraph}</p>
+        {section.image && section.image.afterParagraph === index + 1 ? (
+          <figure className="my-4 overflow-hidden rounded-[1.5rem] border border-border bg-background shadow-sm">
+            <div className="relative aspect-[16/9] w-full">
+              <Image
+                alt={section.image.alt}
+                className="object-cover"
+                fill
+                sizes="(max-width: 1024px) 100vw, 896px"
+                src={section.image.src}
+              />
+            </div>
+          </figure>
+        ) : null}
+      </div>
+    ));
 
   return (
     <main className="bg-background">
@@ -82,9 +105,7 @@ export function SeoInsightArticle({ article }: SeoInsightArticleProps) {
               </h2>
             </div>
             <div className="grid gap-5 text-base leading-8 text-muted sm:text-lg">
-              {leadSection.paragraphs.map((paragraph) => (
-                <p key={paragraph}>{paragraph}</p>
-              ))}
+              {renderParagraphs(leadSection)}
             </div>
           </div>
         </section>
@@ -109,9 +130,7 @@ export function SeoInsightArticle({ article }: SeoInsightArticleProps) {
                     {section.title}
                   </h2>
                   <div className="mt-5 grid gap-4 text-base leading-8 text-muted sm:text-lg">
-                    {section.paragraphs.map((paragraph) => (
-                      <p key={paragraph}>{paragraph}</p>
-                    ))}
+                    {renderParagraphs(section)}
                   </div>
                 </div>
               </div>
