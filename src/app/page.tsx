@@ -8,10 +8,12 @@ import { MarketValidationProgramSection } from "@/components/home/market-validat
 import { ThirdPartyTrustSection } from "@/components/home/third-party-trust-section";
 import { VietnamProofSection } from "@/components/home/vietnam-proof-section";
 import { WhyUsSection } from "@/components/home/why-us-section";
+import { HomeVideoSchema } from "@/components/seo/home-video-schema";
 
 export default function HomePage() {
   return (
     <>
+      <HomeVideoSchema />
       <HeroSection />
       <FeaturedProofSection />
       <VietnamProofSection />
