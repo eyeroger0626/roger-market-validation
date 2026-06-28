@@ -82,10 +82,10 @@ export function HeroSection() {
               展會｜越來越難回本
             </span>
             <span className="mt-3 block whitespace-nowrap text-[2.02rem] font-semibold leading-[1.18] text-primary sm:text-[2.7rem] lg:text-[2.9rem] xl:text-[3.4rem]">
-              先驗證海外市場需求
+              先驗證市場需求
             </span>
             <span className="block whitespace-nowrap text-[2.02rem] font-semibold leading-[1.18] text-primary sm:text-[2.7rem] lg:text-[2.9rem] xl:text-[3.4rem]">
-              再決定是否擴大投入
+              再建立持續獲客系統
             </span>
           </h1>
 
@@ -117,7 +117,7 @@ export function HeroSection() {
                 alt="全球貿易與製造業海外獲客系統主視覺"
                 className="object-cover"
                 fallback={<GlobalTradeFallback />}
-                src="/images/roger-market-validation-og.JPG"
+                src="/assets/hero/global-trade-map.jpg"
               />
               <div className="absolute inset-x-5 top-5 flex flex-wrap items-center justify-between gap-3">
                 <div className="rounded-full border border-white/75 bg-slate-950/68 px-4 py-2 text-sm font-semibold text-white shadow-[0_18px_50px_rgba(0,0,0,0.18)] backdrop-blur-md">
