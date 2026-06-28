@@ -82,7 +82,7 @@ export function HeroSection() {
               展會｜越來越難回本
             </span>
             <span className="mt-3 block whitespace-nowrap text-[2.02rem] font-semibold leading-[1.18] text-primary sm:text-[2.7rem] lg:text-[2.9rem] xl:text-[3.4rem]">
-              先驗證市場需求
+              先驗證海外市場需求
             </span>
             <span className="block whitespace-nowrap text-[2.02rem] font-semibold leading-[1.18] text-primary sm:text-[2.7rem] lg:text-[2.9rem] xl:text-[3.4rem]">
               再建立持續獲客系統
