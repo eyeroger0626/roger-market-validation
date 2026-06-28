@@ -7,7 +7,7 @@ import { AssetImage } from "@/components/ui/asset-image";
 
 const caseHighlights = [
   {
-    title: "美國食品市場驗證",
+    title: "美國食品海外獲客案例",
     industry: "食品製造業",
     market: "美國",
     image: "/assets/case-studies/usa-food/meta-ads-result.jpg",
@@ -15,7 +15,7 @@ const caseHighlights = [
     metrics: ["100 USD", "40+ 採購商名單", "1 筆樣品單進展"],
   },
   {
-    title: "越南設備市場驗證",
+    title: "越南設備海外獲客案例",
     industry: "包裝設備／封口機",
     market: "越南",
     image: "/assets/case-studies/vietnam-equipment/equipment-video-cover.jpg",
@@ -23,7 +23,7 @@ const caseHighlights = [
     metrics: ["300 USD", "129 筆 B2B 詢盤", "設備需求已驗證"],
   },
   {
-    title: "歐洲展會再行銷策略",
+    title: "歐洲展會海外獲客策略案例",
     industry: "包裝設備／真空封口機",
     market: "德國／歐洲",
     href: "/case-studies/case-3",
@@ -41,7 +41,7 @@ export function CaseStudySection() {
               Case Highlights
             </p>
             <h2 className="mt-5 text-3xl font-semibold leading-tight text-foreground sm:text-5xl">
-              三個市場驗證案例，先看結果再看方法。
+              三個海外獲客案例，先看結果再看方法。
             </h2>
           </div>
           <p className="max-w-md text-base leading-7 text-muted">

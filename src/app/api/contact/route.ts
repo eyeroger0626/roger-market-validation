@@ -21,7 +21,7 @@ function normalize(value: unknown) {
 
 function buildEmailText(data: Required<ContactRequest>) {
   return [
-    "海外市場驗證初步評估申請",
+    "製造業海外獲客系統諮詢申請",
     "",
     `公司名稱：${data.companyName}`,
     `聯絡人姓名：${data.contactName}`,
@@ -89,7 +89,7 @@ export async function POST(request: Request) {
       body: JSON.stringify({
         from: fromEmail,
         to: [toEmail],
-        subject: "海外市場驗證初步評估申請",
+        subject: "製造業海外獲客系統諮詢申請",
         text,
       }),
     });

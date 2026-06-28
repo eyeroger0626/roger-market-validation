@@ -4,7 +4,7 @@ import { AssetImage } from "@/components/ui/asset-image";
 const profileItems = [
   "代表人 Roger",
   "台中市青年諮詢委員",
-  "專注製造業海外市場驗證",
+  "專注製造業海外獲客系統",
 ];
 
 const validatedMarkets = [

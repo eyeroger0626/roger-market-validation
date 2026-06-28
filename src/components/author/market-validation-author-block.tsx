@@ -3,12 +3,12 @@ import { BadgeCheck } from "lucide-react";
 
 const resultCards = [
   {
-    title: "美國市場驗證",
+    title: "美國食品海外獲客",
     value: "100 USD",
     detail: "40+ 採購商名單",
   },
   {
-    title: "越南設備市場驗證",
+    title: "越南設備海外獲客",
     value: "300 USD",
     detail: "129 筆 B2B 詢盤",
   },
@@ -40,14 +40,14 @@ export function MarketValidationAuthorBlock() {
                 Roger
               </h2>
               <p className="mt-3 text-lg font-semibold leading-7 text-primary">
-                海外市場驗證系統創建者
+                製造業海外獲客顧問
                 <span className="block text-base font-medium text-muted">
                   星啟夢圓行銷有限公司
                 </span>
               </p>
 
               <p className="mt-6 max-w-3xl text-base leading-8 text-muted sm:text-lg">
-                協助台灣製造業透過探廠短影音、海外廣告測試與市場驗證，在投入展會、阿里國際站或海外開發之前，先取得真實市場需求訊號。
+                協助台灣製造業持續取得海外 B2B 詢盤，降低對展會與 B2B 平台的依賴，透過探廠短影音、Google SEO、海外廣告與內容行銷，建立可持續運作的海外獲客模式。
               </p>
 
               <div className="mt-8 grid gap-3 sm:grid-cols-2">
@@ -77,10 +77,10 @@ export function MarketValidationAuthorBlock() {
 
               <div className="mt-6 rounded-[1.5rem] border border-accent/20 bg-[linear-gradient(135deg,rgba(201,151,74,0.12)_0%,rgba(238,244,247,0.92)_100%)] p-6">
                 <h3 className="text-base font-semibold text-primary">
-                  Roger 的海外市場驗證方法
+                  Roger 的製造業海外獲客方法
                 </h3>
                 <p className="mt-3 text-sm leading-7 text-muted">
-                  不是先大量投入展會或平台費用，而是先用小額預算測試市場反應，確認海外買家是否願意詢問、索樣與回覆，再決定是否擴大投入。
+                  先用市場驗證確認需求，再透過短影音、搜尋內容與海外廣告持續觸及買家，讓詢盤、信任與業務跟進形成可累積的獲客流程。
                 </p>
                 <div className="mt-5 flex flex-wrap gap-2">
                   {methodTags.map((tag) => (
@@ -98,12 +98,12 @@ export function MarketValidationAuthorBlock() {
             <figure className="border-t border-border/70 bg-primary/[0.03] p-5 sm:p-7 lg:border-l lg:border-t-0">
               <div className="rounded-[1.75rem] border border-border/80 bg-white p-4 shadow-[0_28px_90px_rgba(15,23,42,0.14)] sm:p-5">
                 <div className="mb-4 inline-flex rounded-full border border-accent/25 bg-accent/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-primary">
-                  Market Validation System
+                  Overseas Acquisition System
                 </div>
                 <div className="rounded-[1.45rem] bg-[linear-gradient(135deg,#edf4f7_0%,#ffffff_42%,#e8f0f4_100%)] p-3">
                   <div className="relative h-[650px] overflow-hidden rounded-[1.2rem] border border-white bg-white shadow-[0_18px_56px_rgba(15,23,42,0.12)] sm:h-[700px] lg:h-[740px]">
                     <Image
-                      alt="Roger 海外市場驗證系統創建者，協助台灣製造業取得海外詢盤"
+                      alt="Roger 製造業海外獲客顧問，協助台灣製造業持續取得海外詢盤"
                       className="object-contain object-center"
                       fill
                       sizes="(min-width: 1024px) 40vw, 100vw"
@@ -113,7 +113,7 @@ export function MarketValidationAuthorBlock() {
                 </div>
               </div>
               <figcaption className="mt-4 text-center text-sm font-medium text-muted">
-                圖：海外市場驗證系統
+                圖：製造業海外獲客顧問 Roger
               </figcaption>
             </figure>
           </div>

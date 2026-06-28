@@ -11,7 +11,7 @@ export default function NotFound() {
           找不到這個頁面
         </h1>
         <p className="mt-6 text-lg leading-8 text-muted">
-          您可以回到首頁，查看海外市場驗證專案與案例成果。
+          您可以回到首頁，查看製造業海外獲客系統與案例成果。
         </p>
         <Link
           href="/"

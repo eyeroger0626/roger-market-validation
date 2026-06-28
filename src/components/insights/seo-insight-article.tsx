@@ -10,10 +10,9 @@ type SeoInsightArticleProps = {
 
 export function SeoInsightArticle({ article }: SeoInsightArticleProps) {
   const [leadSection, ...bodySections] = article.sections;
-  const ctaTitle = article.cta?.title ?? "想先確認海外市場是否真的有需求？";
+  const ctaTitle = "建立製造業海外獲客系統";
   const ctaDescription =
-    article.cta?.description ??
-    "透過短影音、廣告測試與詢盤分析，先驗證市場反應，再決定是否擴大投入。";
+    "從海外市場驗證開始，串連探廠短影音、Google SEO、海外廣告與內容行銷，持續累積海外買家與 B2B 詢盤。";
 
   const renderParagraphs = (
     section: InsightArticle["sections"][number],
@@ -146,7 +145,7 @@ export function SeoInsightArticle({ article }: SeoInsightArticleProps) {
           <div className="rounded-[2rem] border border-border bg-[linear-gradient(135deg,#ffffff_0%,#eef4f7_100%)] p-8 shadow-[0_30px_90px_rgba(15,23,42,0.1)] sm:p-10 lg:flex lg:items-center lg:justify-between lg:gap-10">
             <div className="max-w-3xl">
               <p className="text-sm font-semibold uppercase tracking-[0.18em] text-secondary">
-                Market Validation CTA
+                Overseas Acquisition CTA
               </p>
               <h2 className="mt-4 text-3xl font-semibold leading-tight text-foreground sm:text-4xl">
                 {ctaTitle}
@@ -159,7 +158,7 @@ export function SeoInsightArticle({ article }: SeoInsightArticleProps) {
               className="mt-8 inline-flex h-12 items-center justify-center rounded-full bg-primary px-7 text-sm font-semibold text-white shadow-soft transition hover:bg-[#0d2f4d] lg:mt-0"
               href="/#contact"
             >
-              預約海外市場驗證討論
+              預約海外獲客系統諮詢
               <ArrowRight aria-hidden="true" className="ml-2 h-4 w-4" />
             </Link>
           </div>

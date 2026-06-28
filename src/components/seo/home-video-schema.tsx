@@ -2,7 +2,7 @@ import { siteUrl } from "@/lib/site-url";
 
 const publisher = {
   "@type": "Organization",
-  name: "星啟夢圓行銷",
+  name: "製造業海外獲客系統｜星啟夢圓行銷",
   url: siteUrl,
   logo: {
     "@type": "ImageObject",
@@ -13,7 +13,7 @@ const publisher = {
 const homeVideos = [
   {
     id: "l8N34Q1J0aI",
-    name: "美國食品市場驗證短影音",
+    name: "美國食品海外獲客案例短影音",
     description:
       "透過探廠短影音呈現工廠實力、生產能力與產品定位，協助美國採購商重新回到對話並進入樣品付款流程。",
     uploadDate: "2026-05-22T14:19:52+08:00",

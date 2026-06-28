@@ -71,26 +71,20 @@ export function HeroSection() {
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
         >
           <p className="mb-5 inline-flex rounded-full border border-primary/10 bg-white/80 px-4 py-2 text-sm font-semibold text-primary shadow-[0_10px_30px_rgba(18,59,93,0.08)] backdrop-blur">
-            低成本市場驗證｜海外詢盤測試｜製造業社媒外貿出海
+            探廠短影音｜Google SEO｜海外廣告｜內容行銷
           </p>
 
           <h1 className="max-w-3xl tracking-normal text-foreground">
             <span className="block whitespace-nowrap text-[2.25rem] font-semibold leading-[1.12] sm:text-[3.35rem] lg:text-[3.55rem] xl:text-[4.1rem]">
-              詢盤｜越來越難成交
+              協助台灣製造業
             </span>
             <span className="block whitespace-nowrap text-[2.25rem] font-semibold leading-[1.12] sm:text-[3.35rem] lg:text-[3.55rem] xl:text-[4.1rem]">
-              展會｜越來越難回本
-            </span>
-            <span className="mt-3 block whitespace-nowrap text-[2.02rem] font-semibold leading-[1.18] text-primary sm:text-[2.7rem] lg:text-[2.9rem] xl:text-[3.4rem]">
-              先驗證海外市場需求
-            </span>
-            <span className="block whitespace-nowrap text-[2.02rem] font-semibold leading-[1.18] text-primary sm:text-[2.7rem] lg:text-[2.9rem] xl:text-[3.4rem]">
-              再決定是否擴大投入
+              持續取得海外客戶
             </span>
           </h1>
 
           <p className="mt-7 max-w-[44rem] text-[1.05rem] leading-8 text-muted [text-wrap:pretty] sm:text-lg sm:leading-9 lg:max-w-[46rem]">
-            紅色供應鏈擠壓、平台價格競爭加劇，台灣製造業不能再只靠展會或阿里國際站碰運氣。星啟夢圓行銷協助工廠用短影音、海外廣告與小額預算，先測出海外買家的真實需求，再決定是否加碼投入。
+            協助台灣製造業持續取得海外 B2B 詢盤，降低對展會與 B2B 平台的依賴。
           </p>
 
           <div className="mt-8 flex flex-col gap-4 sm:flex-row">
@@ -98,13 +92,13 @@ export function HeroSection() {
               className="inline-flex h-12 w-full items-center justify-center rounded-full bg-primary px-7 text-sm font-semibold text-white shadow-[0_18px_45px_rgba(18,59,93,0.25)] transition hover:-translate-y-0.5 hover:bg-[#0d2f4d] focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 sm:w-auto"
               href="#featured-proof"
             >
-              查看真實案例
+              查看海外獲客案例
             </a>
             <a
               className="inline-flex h-12 w-full items-center justify-center rounded-full border border-primary/15 bg-white/82 px-7 text-sm font-semibold text-primary shadow-sm backdrop-blur transition hover:-translate-y-0.5 hover:border-primary/40 hover:bg-white focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 sm:w-auto"
               href="#contact"
             >
-              預約市場驗證諮詢
+              預約海外獲客諮詢
             </a>
           </div>
         </motion.div>
@@ -114,19 +108,11 @@ export function HeroSection() {
           <div className="relative overflow-hidden rounded-[2.25rem] border border-white/80 bg-white shadow-[0_40px_120px_rgba(15,23,42,0.18)] ring-1 ring-primary/5">
             <div className="relative min-h-[32rem] overflow-hidden sm:min-h-[36rem] lg:min-h-[38rem]">
               <AssetImage
-                alt="全球貿易與海外市場驗證主視覺"
+                alt="全球貿易與製造業海外獲客系統主視覺"
                 className="object-cover"
                 fallback={<GlobalTradeFallback />}
-                src="/assets/hero/global-trade-map.jpg"
+                src="/images/roger-market-validation-og.JPG"
               />
-              <div className="absolute inset-x-5 top-5 flex flex-wrap items-center justify-between gap-3">
-                <div className="rounded-full border border-white/75 bg-slate-950/68 px-4 py-2 text-sm font-semibold text-white shadow-[0_18px_50px_rgba(0,0,0,0.18)] backdrop-blur-md">
-                  Factory → Buyer → Lead
-                </div>
-                <div className="rounded-full border border-accent/40 bg-slate-950/62 px-4 py-2 text-sm font-semibold text-accent shadow-sm backdrop-blur-md">
-                  Market Validation
-                </div>
-              </div>
 
               <div className="absolute bottom-5 left-5 right-5 grid gap-3 sm:grid-cols-3">
                 {validationSignals.map((item) => {

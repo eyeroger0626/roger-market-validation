@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { MarketValidationAuthorBlock } from "@/components/author/market-validation-author-block";
 import { socialShareImage, socialShareImageUrl } from "@/lib/social-share";
@@ -17,13 +17,13 @@ import {
 } from "lucide-react";
 
 const pageTitle =
-  "越南 PCR 市場驗證案例｜500 美金取得 3 筆詢盤，更重要的是看見市場真正的阻力";
+  "越南 PCR 海外獲客洞察案例｜500 美金取得 3 筆詢盤，更重要的是看見市場真正的阻力";
 const pageDescription =
   "台灣 PCR 再生塑膠材料製造商透過 TikTok 與短影音測試越南市場，投入 500 美金取得 3 筆詢盤，並發現越南市場對 PCR 存在明顯認知偏見。";
 
 export const metadata: Metadata = {
   title: pageTitle,
-  description: pageDescription,
+  description: [pageDescription, "星啟夢圓行銷協助台灣製造業持續取得海外 B2B 詢盤，降低對展會與 B2B 平台的依賴。"].join(" "),
   keywords: [
     "PCR 市場開發",
     "越南市場開發",
@@ -43,16 +43,16 @@ export const metadata: Metadata = {
     "TikTok 開發海外市場",
   ],
   openGraph: {
-    title: pageTitle,
-    description: pageDescription,
+    title: [pageTitle, "製造業海外獲客系統｜星啟夢圓行銷"].join("\uFF5C"),
+    description: [pageDescription, "星啟夢圓行銷協助台灣製造業持續取得海外 B2B 詢盤，降低對展會與 B2B 平台的依賴。"].join(" "),
     type: "article",
     locale: "zh_TW",
     images: [socialShareImage],
   },
   twitter: {
     card: "summary_large_image",
-    title: pageTitle,
-    description: pageDescription,
+    title: [pageTitle, "製造業海外獲客系統｜星啟夢圓行銷"].join("\uFF5C"),
+    description: [pageDescription, "星啟夢圓行銷協助台灣製造業持續取得海外 B2B 詢盤，降低對展會與 B2B 平台的依賴。"].join(" "),
     images: [socialShareImageUrl],
   },
 };
@@ -165,7 +165,7 @@ export default function VietnamPcrMarketInsightPage() {
                 Market Insight Case
               </p>
               <h1 className="mt-6 text-4xl font-semibold leading-tight text-foreground sm:text-5xl lg:text-6xl">
-                越南 PCR 市場驗證案例
+                越南 PCR 海外獲客洞察案例
                 <span className="block text-primary">
                   500 美金取得 3 筆詢盤，更重要的是看見市場真正的阻力
                 </span>
@@ -178,7 +178,7 @@ export default function VietnamPcrMarketInsightPage() {
                   className="inline-flex h-12 items-center justify-center rounded-full bg-primary px-7 text-sm font-semibold text-white shadow-soft transition hover:bg-[#0d2f4d]"
                   href="/#contact"
                 >
-                  立即預約市場評估
+                  諮詢海外獲客系統
                   <ArrowRight aria-hidden="true" className="ml-2 h-4 w-4" />
                 </Link>
               </div>
@@ -508,20 +508,20 @@ export default function VietnamPcrMarketInsightPage() {
           <div className="rounded-[2rem] border border-border bg-[linear-gradient(135deg,#ffffff_0%,#eef4f7_100%)] p-8 shadow-[0_30px_90px_rgba(15,23,42,0.1)] sm:p-10 lg:flex lg:items-center lg:justify-between lg:gap-10">
             <div className="max-w-3xl">
               <p className="text-sm font-semibold uppercase tracking-[0.18em] text-secondary">
-                Market Validation CTA
+                Overseas Acquisition CTA
               </p>
               <h2 className="mt-4 text-3xl font-semibold leading-tight text-foreground sm:text-4xl">
                 想在投入展會或代理商開發前，先看見市場真正阻力？
               </h2>
               <p className="mt-5 text-base leading-8 text-muted sm:text-lg">
-                歡迎與我們聯繫。星啟夢圓行銷將協助您透過製造業海外市場驗證系統，先確認市場需求與市場阻力，再決定是否擴大投入。
+                歡迎與我們聯繫。星啟夢圓行銷將從海外市場驗證開始，協助您建立可持續運作的製造業海外獲客系統。
               </p>
             </div>
             <Link
               className="mt-8 inline-flex h-12 items-center justify-center rounded-full bg-primary px-7 text-sm font-semibold text-white shadow-soft transition hover:bg-[#0d2f4d] lg:mt-0"
               href="/#contact"
             >
-              立即預約市場評估
+              建立海外獲客系統
               <ArrowRight aria-hidden="true" className="ml-2 h-4 w-4" />
             </Link>
           </div>

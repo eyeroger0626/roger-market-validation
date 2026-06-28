@@ -10,3 +10,7 @@ build
 public/assets/**/*.mp4
 tmp-screenshots/
 outputs/screenshots/
+
+# Unused local image drafts (the site uses the user-provided Hero artwork).
+public/assets/hero/manufacturing-overseas-acquisition-system.webp
+public/images/manufacturing-overseas-acquisition-og.jpg

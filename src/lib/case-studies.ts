@@ -12,7 +12,7 @@ export type CaseStudy = {
 export const caseStudies: CaseStudy[] = [
   {
     slug: "case-1",
-    title: "美國食品市場驗證",
+    title: "美國食品海外獲客案例",
     industry: "食品製造業",
     market: "美國",
     summary:
@@ -26,7 +26,7 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     slug: "case-2",
-    title: "越南設備市場驗證",
+    title: "越南設備海外獲客案例",
     industry: "包裝設備／封口機",
     market: "越南",
     summary:
@@ -40,7 +40,7 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     slug: "case-3",
-    title: "歐洲展會再行銷策略",
+    title: "歐洲展會海外獲客策略案例",
     industry: "包裝設備／真空封口機",
     market: "德國／歐洲",
     summary:

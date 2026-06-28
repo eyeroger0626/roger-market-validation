@@ -13,38 +13,38 @@ import {
 
 const flowSteps = [
   {
-    title: "工廠訪談",
-    description: "先整理產品、外銷經驗、目標市場與目前開發卡點，確認驗證方向。",
+    title: "海外市場驗證",
+    description: "先測試目標國家、產品與買家需求，確認值得投入的市場方向。",
     icon: ClipboardCheck,
   },
   {
-    title: "探廠拍攝",
-    description: "把工廠現場、設備、生產流程與團隊可信度轉成海外買家能理解的素材。",
+    title: "探廠短影音",
+    description: "把工廠現場、生產流程與產品優勢轉成海外買家看得懂的信任內容。",
     icon: Camera,
   },
   {
-    title: "短影音素材製作",
-    description: "將工廠能力與產品應用整理成短影音內容，降低海外買家的理解成本。",
-    icon: Video,
-  },
-  {
-    title: "海外廣告測試",
-    description: "用小額預算測試不同市場與受眾反應，觀察詢盤數量與買家意圖。",
-    icon: Megaphone,
-  },
-  {
-    title: "採購商名單收集",
-    description: "整理主動回應的潛在買家資料，作為後續業務追蹤與市場判斷依據。",
-    icon: UsersRound,
-  },
-  {
-    title: "市場訊號分析",
-    description: "分析詢盤內容、買家角色、需求強度與市場反應，判斷是否值得深入。",
+    title: "Google SEO",
+    description: "建立能被海外採購商搜尋的網站內容，持續累積品牌與自然搜尋資產。",
     icon: BarChart3,
   },
   {
-    title: "決定是否擴大投入",
-    description: "根據驗證結果決定下一步：加碼廣告、增加內容、開發特定國家或暫緩投入。",
+    title: "海外廣告",
+    description: "精準觸及目標市場與產業受眾，快速取得可追蹤的買家回應。",
+    icon: Megaphone,
+  },
+  {
+    title: "海外內容行銷",
+    description: "持續發布產品、工廠與案例內容，讓買家在決策過程中反覆看見企業。",
+    icon: Video,
+  },
+  {
+    title: "海外 B2B 詢盤",
+    description: "收集採購需求與買家資料，交由業務持續跟進、報價與推動樣品合作。",
+    icon: UsersRound,
+  },
+  {
+    title: "持續成交",
+    description: "把內容、流量、詢盤與業務追蹤串成可持續優化的海外獲客系統。",
     icon: Factory,
   },
 ];
@@ -56,14 +56,14 @@ export function WhyUsSection() {
         <div className="mb-10 grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.18em] text-secondary">
-              Market Validation Flow
+              Overseas Acquisition Flow
             </p>
             <h2 className="mt-4 text-3xl font-semibold leading-tight text-foreground sm:text-4xl">
-              海外市場驗證流程
+              製造業海外獲客流程
             </h2>
           </div>
           <p className="max-w-2xl text-base leading-7 text-muted lg:ml-auto">
-            不是先投入大量預算，而是用可追蹤的驗證流程，從工廠素材、廣告測試到市場訊號分析，協助老闆判斷下一步。
+            從第一階段市場驗證開始，串連內容、搜尋、廣告、詢盤與業務跟進，建立能長期運作的海外獲客系統。
           </p>
         </div>
 

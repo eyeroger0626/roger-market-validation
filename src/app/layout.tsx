@@ -7,9 +7,9 @@ import { socialShareImage, socialShareImageUrl } from "@/lib/social-share";
 import { siteUrl } from "@/lib/site-url";
 import "./globals.css";
 
-const siteTitle = "星啟夢圓行銷｜製造業海外獲客系統";
+const siteTitle = "製造業海外獲客系統｜星啟夢圓行銷";
 const siteDescription =
-  "協助台灣製造業透過探廠短影音、海外廣告與市場測試，先驗證海外需求，再決定是否擴大投入。";
+  "協助台灣製造業持續取得海外 B2B 詢盤，降低對展會與 B2B 平台的依賴。";
 const organizationName = "星啟夢圓行銷";
 const organizationLegalName = "星啟夢圓行銷有限公司";
 const googleSiteVerification =
@@ -18,7 +18,7 @@ const googleSiteVerification =
 const websiteJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  name: organizationName,
+  name: siteTitle,
   alternateName: organizationName,
   url: siteUrl,
   description: siteDescription,
@@ -28,7 +28,7 @@ const websiteJsonLd = {
 const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: organizationName,
+  name: siteTitle,
   legalName: organizationLegalName,
   url: siteUrl,
   logo: `${siteUrl}/logo.png`,
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
     default: siteTitle,
-    template: `%s｜${organizationName}`,
+    template: `%s｜${siteTitle}`,
   },
   applicationName: siteTitle,
   description: siteDescription,

@@ -63,7 +63,7 @@ export function VietnamProofSection() {
               Vietnam Proof
             </p>
             <h2 className="mt-5 text-3xl font-semibold leading-tight sm:text-5xl lg:text-6xl">
-              <span className="block">越南設備市場驗證</span>
+              <span className="block">越南設備海外獲客案例</span>
               <span className="mt-3 block text-[1.65rem] leading-tight text-white/82 sm:whitespace-nowrap sm:text-[2.35rem] lg:text-[2.95rem]">
                 300 美金取得 129 筆 B2B 詢盤
               </span>

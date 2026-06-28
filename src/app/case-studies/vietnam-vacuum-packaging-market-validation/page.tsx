@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { MarketValidationAuthorBlock } from "@/components/author/market-validation-author-block";
 import { socialShareImage, socialShareImageUrl } from "@/lib/social-share";
@@ -16,13 +16,13 @@ import {
   Video,
 } from "lucide-react";
 
-const pageTitle = "300 美金取得 129 筆 B2B 詢盤｜越南設備市場驗證案例";
+const pageTitle = "300 美金取得 129 筆 B2B 詢盤｜越南設備海外獲客案例";
 const pageDescription =
   "台灣真空包裝設備工廠透過探廠短影音、越南語內容與 Meta 廣告測試，在越南市場取得 129 筆 B2B 詢盤，平均 CPL 僅 2.33 USD。";
 
 export const metadata: Metadata = {
   title: pageTitle,
-  description: pageDescription,
+  description: [pageDescription, "星啟夢圓行銷協助台灣製造業持續取得海外 B2B 詢盤，降低對展會與 B2B 平台的依賴。"].join(" "),
   keywords: [
     "越南市場開發",
     "越南設備市場",
@@ -44,16 +44,16 @@ export const metadata: Metadata = {
     "越南設備經銷商開發",
   ],
   openGraph: {
-    title: pageTitle,
-    description: pageDescription,
+    title: [pageTitle, "製造業海外獲客系統｜星啟夢圓行銷"].join("\uFF5C"),
+    description: [pageDescription, "星啟夢圓行銷協助台灣製造業持續取得海外 B2B 詢盤，降低對展會與 B2B 平台的依賴。"].join(" "),
     type: "article",
     locale: "zh_TW",
     images: [socialShareImage],
   },
   twitter: {
     card: "summary_large_image",
-    title: pageTitle,
-    description: pageDescription,
+    title: [pageTitle, "製造業海外獲客系統｜星啟夢圓行銷"].join("\uFF5C"),
+    description: [pageDescription, "星啟夢圓行銷協助台灣製造業持續取得海外 B2B 詢盤，降低對展會與 B2B 平台的依賴。"].join(" "),
     images: [socialShareImageUrl],
   },
 };
@@ -158,10 +158,10 @@ export default function VietnamVacuumPackagingMarketValidationPage() {
           <div className="grid gap-10 lg:grid-cols-[1.04fr_0.96fr] lg:items-center">
             <div>
               <p className="inline-flex rounded-full border border-primary/10 bg-white/80 px-4 py-2 text-sm font-semibold text-primary shadow-[0_10px_30px_rgba(18,59,93,0.08)]">
-                越南設備市場驗證案例
+                越南設備海外獲客案例
               </p>
               <h1 className="mt-6 text-4xl font-semibold leading-tight text-foreground sm:text-5xl lg:text-6xl">
-                越南設備市場驗證案例
+                越南設備海外獲客案例
                 <span className="block text-primary">
                   300 美金取得 129 筆 B2B 詢盤
                 </span>
@@ -174,7 +174,7 @@ export default function VietnamVacuumPackagingMarketValidationPage() {
                   className="inline-flex h-12 items-center justify-center rounded-full bg-primary px-7 text-sm font-semibold text-white shadow-soft transition hover:bg-[#0d2f4d]"
                   href="/#contact"
                 >
-                  立即預約市場評估
+                  諮詢海外獲客系統
                   <ArrowRight aria-hidden="true" className="ml-2 h-4 w-4" />
                 </Link>
               </div>
@@ -443,7 +443,7 @@ export default function VietnamVacuumPackagingMarketValidationPage() {
           <div className="rounded-[2rem] border border-border bg-[linear-gradient(135deg,#ffffff_0%,#eef4f7_100%)] p-8 shadow-[0_30px_90px_rgba(15,23,42,0.1)] sm:p-10 lg:flex lg:items-center lg:justify-between lg:gap-10">
             <div className="max-w-3xl">
               <p className="text-sm font-semibold uppercase tracking-[0.18em] text-secondary">
-                Market Validation CTA
+                Overseas Acquisition CTA
               </p>
               <h2 className="mt-4 text-3xl font-semibold leading-tight text-foreground sm:text-4xl">
                 想知道你的設備是否適合開發越南市場？
@@ -456,7 +456,7 @@ export default function VietnamVacuumPackagingMarketValidationPage() {
               className="mt-8 inline-flex h-12 items-center justify-center rounded-full bg-primary px-7 text-sm font-semibold text-white shadow-soft transition hover:bg-[#0d2f4d] lg:mt-0"
               href="/#contact"
             >
-              立即預約市場評估
+              建立海外獲客系統
               <ArrowRight aria-hidden="true" className="ml-2 h-4 w-4" />
             </Link>
           </div>

@@ -38,13 +38,13 @@ export function ContactSection() {
 
     if (!companyName) {
       setSubmitted(false);
-      setError("????????");
+      setError("請填寫公司名稱。");
       return;
     }
 
     if (!email && !contact) {
       setSubmitted(false);
-      setError("????? Email ? Line ID / ???????????");
+      setError("請至少填寫 Email 或 Line ID / 電話，方便我們聯繫您。");
       return;
     }
 
@@ -80,7 +80,7 @@ export function ContactSection() {
       setSubmitted(true);
     } catch {
       setSubmitted(false);
-      setError("?????????????? Email ?????");
+      setError("送出失敗，請稍後再試，或直接 Email 聯繫我們。");
     } finally {
       setIsSubmitting(false);
     }

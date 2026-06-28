@@ -44,7 +44,7 @@ export function FeaturedProofSection() {
               Featured Proof
             </p>
             <h2 className="mt-5 text-[2rem] font-semibold leading-[1.35] text-foreground sm:text-[2.65rem] sm:leading-[1.3] lg:text-[3rem]">
-              <span className="block">美國食品市場驗證</span>
+              <span className="block">美國食品海外獲客案例</span>
               <span className="block">讓停滯買家重新回流</span>
               <span className="block">並進入樣品付款流程</span>
             </h2>
@@ -79,7 +79,7 @@ export function FeaturedProofSection() {
                 allowFullScreen
                 className="h-full w-full"
                 src="https://www.youtube.com/embed/l8N34Q1J0aI"
-                title="美國食品市場驗證短影音"
+                title="美國食品海外獲客案例短影音"
               />
             </div>
           </div>

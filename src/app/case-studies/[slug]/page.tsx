@@ -113,19 +113,28 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: CaseStudyPageProps) {
   const { slug } = await params;
   const caseStudy = getCaseStudy(slug);
+  const title = caseStudy?.title ?? "Case Study";
+  const description = [
+    caseStudy?.summary ?? "",
+    "星啟夢圓行銷協助台灣製造業持續取得海外 B2B 詢盤，降低對展會與 B2B 平台的依賴。",
+  ].join(" ");
+  const socialTitle = [
+    title,
+    "製造業海外獲客系統｜星啟夢圓行銷",
+  ].join("\uFF5C");
 
   return {
-    title: caseStudy?.title ?? "Case Study",
-    description: caseStudy?.summary ?? "",
+    title,
+    description,
     openGraph: {
-      title: caseStudy?.title ?? "Case Study",
-      description: caseStudy?.summary ?? "",
+      title: socialTitle,
+      description,
       images: [socialShareImage],
     },
     twitter: {
       card: "summary_large_image",
-      title: caseStudy?.title ?? "Case Study",
-      description: caseStudy?.summary ?? "",
+      title: socialTitle,
+      description,
       images: [socialShareImageUrl],
     },
   };
@@ -213,7 +222,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
 const usaCaseStudyDetail: DetailedCaseStudy = {
   evidenceFirst: true,
   eyebrow: "美國食品 Market Validation",
-  title: "美國食品市場驗證",
+  title: "美國食品海外獲客案例",
   summary: "以 100 美金廣告預算取得 40+ 美國採購商名單，並推動樣品單進展。",
   market: "美國",
   industry: "食品製造業",
@@ -351,7 +360,7 @@ const usaCaseStudyDetail: DetailedCaseStudy = {
     icon: Globe2,
   },
   ],
-  galleryTitle: "美國食品市場驗證素材紀錄。",
+  galleryTitle: "美國食品海外獲客案例素材紀錄。",
   galleryDescription:
     "以實際廣告數據、採購商對話、樣品付款流程、短影音素材與工廠現場畫面，完整呈現從低預算測試到市場訊號成立的證據。",
   galleryItems: [
@@ -414,15 +423,15 @@ const usaCaseStudyDetail: DetailedCaseStudy = {
   insightSecondary: "信任才會創造轉換",
   insightDescription:
     "本次專案最大的價值不是流量數字，而是找出哪些信任證據會讓買家願意回覆、提問，並走向下一個具體動作。",
-  ctaTitle: "在擴大投入前，先驗證下一個海外市場。",
+  ctaTitle: "從市場驗證開始，建立海外獲客系統。",
   ctaDescription:
-    "對準備外銷擴張的製造業來說，一個聚焦的 Market Validation 專案能把不確定性轉換成買家證據。",
-  primaryCta: "預約諮詢",
+    "從市場驗證、短影音與海外廣告開始，把不確定性轉換成買家證據與可持續追蹤的詢盤。",
+  primaryCta: "預約海外獲客諮詢",
 };
 
 const vietnamCaseStudyDetail: DetailedCaseStudy = {
   eyebrow: "越南設備 Market Validation",
-  title: "越南設備市場驗證",
+  title: "越南設備海外獲客案例",
   summary:
     "以 300 美金廣告預算取得 129 筆設備相關 B2B 詢盤。",
   market: "越南",
@@ -619,12 +628,12 @@ const vietnamCaseStudyDetail: DetailedCaseStudy = {
   ctaTitle: "驗證您的下一個海外市場",
   ctaDescription:
     "在投入大型廣告、展會或經銷商開發前，先確認目標市場是否能產生真實買家對話。",
-  primaryCta: "預約市場驗證",
+  primaryCta: "預約海外獲客諮詢",
 };
 
 const europeCaseStudyDetail: DetailedCaseStudy = {
-  eyebrow: "歐洲展會再行銷策略",
-  title: "歐洲展會再行銷策略",
+  eyebrow: "歐洲展會海外獲客策略",
+  title: "歐洲展會海外獲客策略案例",
   summary:
     "將展會名片與現場素材轉化為後續信任建立與代理商開發機會。",
   market: "德國／歐洲",
@@ -822,10 +831,10 @@ const europeCaseStudyDetail: DetailedCaseStudy = {
   insightSecondary: "多次接觸才能建立歐洲 B2B 信任",
   insightDescription:
     "對歐洲 B2B 買家來說，信任需要透過多次接觸累積。展會接觸只是第一步，短影音與再行銷能協助製造商在展後保持可見度，讓後續跟進更有效。",
-  ctaTitle: "規劃您的展後市場驗證",
+  ctaTitle: "把展後追蹤納入海外獲客系統",
   ctaDescription:
     "把下一次展會轉化為有系統的追蹤流程，持續維持買家互動、強化信任，並支援代理商與經銷商開發。",
-  primaryCta: "規劃展後市場驗證",
+  primaryCta: "規劃海外獲客系統",
 };
 
 function FeaturedCaseStudyPage({ data }: { data: DetailedCaseStudy }) {

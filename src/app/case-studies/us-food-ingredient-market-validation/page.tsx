@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { MarketValidationAuthorBlock } from "@/components/author/market-validation-author-block";
 import { socialShareImage, socialShareImageUrl } from "@/lib/social-share";
@@ -16,26 +16,30 @@ import {
   UsersRound,
 } from "lucide-react";
 
+const pageTitle =
+  "美國食品海外獲客案例｜4天取得42筆詢盤並完成樣品付款";
+
 export const metadata: Metadata = {
-  title:
-    "美國食品原料市場驗證案例｜4天取得42筆詢盤並完成樣品付款｜星啟夢圓行銷",
+  title: pageTitle,
   description:
-    "台灣食品原料供應商透過海外市場驗證系統，在4天內取得42筆美國詢盤並完成樣品付款，驗證美國市場需求。",
+    ["台灣食品原料供應商透過製造業海外獲客系統，在4天內取得42筆美國詢盤並完成樣品付款，驗證美國市場需求。", "星啟夢圓行銷協助台灣製造業持續取得海外 B2B 詢盤，降低對展會與 B2B 平台的依賴。"].join(" "),
   openGraph: {
-    title:
-      "美國食品原料市場驗證案例｜4天取得42筆詢盤並完成樣品付款｜星啟夢圓行銷",
+    title: [pageTitle, "製造業海外獲客系統｜星啟夢圓行銷"].join(
+      "\uFF5C",
+    ),
     description:
-      "台灣食品原料供應商透過海外市場驗證系統，在4天內取得42筆美國詢盤並完成樣品付款，驗證美國市場需求。",
+      ["台灣食品原料供應商透過製造業海外獲客系統，在4天內取得42筆美國詢盤並完成樣品付款，驗證美國市場需求。", "星啟夢圓行銷協助台灣製造業持續取得海外 B2B 詢盤，降低對展會與 B2B 平台的依賴。"].join(" "),
     type: "article",
     locale: "zh_TW",
     images: [socialShareImage],
   },
   twitter: {
     card: "summary_large_image",
-    title:
-      "美國食品原料市場驗證案例｜4天取得42筆詢盤並完成樣品付款｜星啟夢圓行銷",
+    title: [pageTitle, "製造業海外獲客系統｜星啟夢圓行銷"].join(
+      "\uFF5C",
+    ),
     description:
-      "台灣食品原料供應商透過海外市場驗證系統，在4天內取得42筆美國詢盤並完成樣品付款，驗證美國市場需求。",
+      ["台灣食品原料供應商透過製造業海外獲客系統，在4天內取得42筆美國詢盤並完成樣品付款，驗證美國市場需求。", "星啟夢圓行銷協助台灣製造業持續取得海外 B2B 詢盤，降低對展會與 B2B 平台的依賴。"].join(" "),
     images: [socialShareImageUrl],
   },
 };
@@ -158,23 +162,23 @@ export default function UsFoodIngredientMarketValidationPage() {
           <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
             <div>
               <p className="inline-flex rounded-full border border-primary/10 bg-white/80 px-4 py-2 text-sm font-semibold text-primary shadow-[0_10px_30px_rgba(18,59,93,0.08)]">
-                美國食品原料市場驗證案例
+                美國食品海外獲客案例
               </p>
               <h1 className="mt-6 text-4xl font-semibold leading-tight text-foreground sm:text-5xl lg:text-6xl">
-                美國食品原料市場驗證案例｜
+                美國食品海外獲客案例｜
                 <span className="block text-primary">
                   4天取得42筆詢盤並完成樣品付款
                 </span>
               </h1>
               <p className="mt-7 max-w-3xl text-lg leading-8 text-muted sm:text-xl sm:leading-9">
-                台灣食品原料供應商透過海外市場驗證系統，在投入大量資源之前，先以短影音、廣告與市場測試確認美國買家是否真的存在需求。
+                台灣食品原料供應商透過製造業海外獲客系統，在投入大量資源之前，先以短影音、廣告與市場測試確認美國買家是否真的存在需求。
               </p>
               <div className="mt-8 flex flex-col gap-4 sm:flex-row">
                 <Link
                   className="inline-flex h-12 items-center justify-center rounded-full bg-primary px-7 text-sm font-semibold text-white shadow-soft transition hover:bg-[#0d2f4d]"
                   href="/#contact"
                 >
-                  立即預約市場評估
+                  諮詢海外獲客系統
                   <ArrowRight aria-hidden="true" className="ml-2 h-4 w-4" />
                 </Link>
               </div>
@@ -276,7 +280,7 @@ export default function UsFoodIngredientMarketValidationPage() {
           <SectionHeader
             eyebrow="Validation System"
             title="驗證方式"
-            description="本次專案採用海外市場驗證系統進行測試，以內容素材、受眾測試與詢盤收集建立可判斷的市場訊號。"
+            description="本次專案以海外市場驗證作為獲客流程第一階段，透過內容素材、受眾測試與詢盤收集建立可判斷的市場訊號。"
           />
           <div className="mt-10 grid gap-6 lg:grid-cols-3">
             {processSteps.map((step, index) => {
@@ -456,20 +460,20 @@ export default function UsFoodIngredientMarketValidationPage() {
           <div className="rounded-[2rem] border border-border bg-[linear-gradient(135deg,#ffffff_0%,#eef4f7_100%)] p-8 shadow-[0_30px_90px_rgba(15,23,42,0.1)] sm:p-10 lg:flex lg:items-center lg:justify-between lg:gap-10">
             <div className="max-w-3xl">
               <p className="text-sm font-semibold uppercase tracking-[0.18em] text-secondary">
-                Market Validation CTA
+                Overseas Acquisition CTA
               </p>
               <h2 className="mt-4 text-3xl font-semibold leading-tight text-foreground sm:text-4xl">
                 想知道您的產品是否適合海外市場？
               </h2>
               <p className="mt-5 text-base leading-8 text-muted sm:text-lg">
-                歡迎預約免費初步評估。我們將協助您透過市場驗證方式，先確認海外需求，再決定是否擴大投入。
+                歡迎預約免費初步評估。我們將從市場驗證開始，協助您建立可持續運作的製造業海外獲客系統。
               </p>
             </div>
             <Link
               className="mt-8 inline-flex h-12 items-center justify-center rounded-full bg-primary px-7 text-sm font-semibold text-white shadow-soft transition hover:bg-[#0d2f4d] lg:mt-0"
               href="/#contact"
             >
-              立即預約市場評估
+              建立海外獲客系統
               <ArrowRight aria-hidden="true" className="ml-2 h-4 w-4" />
             </Link>
           </div>

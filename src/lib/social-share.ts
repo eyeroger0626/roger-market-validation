@@ -1,9 +1,10 @@
 import { siteUrl } from "@/lib/site-url";
 
-export const socialShareImagePath = "/images/roger-market-validation-og.jpg";
+export const socialShareImagePath =
+  "/images/roger-market-validation-og.JPG";
 
 export const socialShareImageAlt =
-  "海外市場驗證系統｜先驗證海外需求，再決定是否擴大投入";
+  "製造業海外獲客系統｜星啟夢圓行銷";
 
 export const socialShareImageUrl = `${siteUrl}${socialShareImagePath}`;
 
