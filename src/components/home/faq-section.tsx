@@ -82,7 +82,7 @@ export function FaqSection() {
                 href="#contact"
                 className="mt-5 inline-flex h-12 w-full items-center justify-center rounded-full bg-primary px-7 text-sm font-semibold text-white shadow-soft transition hover:bg-[#0d2f4d] focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 sm:w-auto"
               >
-                預約海外獲客諮詢
+                預約初步討論
               </a>
             </div>
           </div>

@@ -110,7 +110,7 @@ export function MarketValidationProgramSection() {
                     className="mt-8 inline-flex h-12 w-full items-center justify-center rounded-full bg-primary px-7 text-sm font-semibold text-white shadow-[0_18px_45px_rgba(18,59,93,0.25)] transition hover:-translate-y-0.5 hover:bg-[#0d2f4d] focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 sm:w-auto"
                     href="#contact"
                   >
-                    預約海外獲客諮詢
+                    預約市場驗證諮詢
                   </a>
                 </div>
               </div>
