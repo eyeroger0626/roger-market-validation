@@ -138,6 +138,59 @@ export function SeoInsightArticle({ article }: SeoInsightArticleProps) {
         </div>
       </section>
 
+      {article.relatedLinks?.length ? (
+        <section className="bg-white py-20 sm:py-24">
+          <div className="mx-auto w-full max-w-5xl px-6 lg:px-8">
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-secondary">
+              Related Insights
+            </p>
+            <h2 className="mt-4 text-3xl font-semibold text-foreground">
+              延伸閱讀
+            </h2>
+            <div className="mt-8 grid gap-4 sm:grid-cols-2">
+              {article.relatedLinks.map((link) => (
+                <Link
+                  className="flex items-center justify-between rounded-[1.25rem] border border-border bg-background p-5 font-semibold text-primary transition hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-sm"
+                  href={link.href}
+                  key={link.href}
+                >
+                  {link.label}
+                  <ArrowRight aria-hidden="true" className="h-4 w-4 shrink-0" />
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      ) : null}
+
+      {article.faqs?.length ? (
+        <section className="py-20 sm:py-24">
+          <div className="mx-auto w-full max-w-5xl px-6 lg:px-8">
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-secondary">
+              FAQ
+            </p>
+            <h2 className="mt-4 text-3xl font-semibold text-foreground">
+              常見問題
+            </h2>
+            <div className="mt-8 grid gap-4">
+              {article.faqs.map((faq) => (
+                <article
+                  className="rounded-[1.5rem] border border-border bg-white p-6 shadow-sm sm:p-8"
+                  key={faq.question}
+                >
+                  <h3 className="text-xl font-semibold leading-8 text-foreground">
+                    {faq.question}
+                  </h3>
+                  <p className="mt-4 text-base leading-8 text-muted sm:text-lg">
+                    {faq.answer}
+                  </p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+      ) : null}
+
       <MarketValidationAuthorBlock />
 
       <section className="bg-white pb-24 sm:pb-28">
