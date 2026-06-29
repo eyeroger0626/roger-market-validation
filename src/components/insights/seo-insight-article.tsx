@@ -9,7 +9,11 @@ type SeoInsightArticleProps = {
 };
 
 export function SeoInsightArticle({ article }: SeoInsightArticleProps) {
-  const [leadSection, ...bodySections] = article.sections;
+  const contentSections = article.sections.filter(
+    (section) =>
+      section.title !== "主要關鍵字" && section.title !== "關鍵字",
+  );
+  const [leadSection, ...bodySections] = contentSections;
   const ctaTitle = "建立製造業海外獲客系統";
   const ctaDescription =
     "從海外市場驗證開始，串連探廠短影音、Google SEO、海外廣告與內容行銷，持續累積海外買家與 B2B 詢盤。";
@@ -50,16 +54,6 @@ export function SeoInsightArticle({ article }: SeoInsightArticleProps) {
             <p className="mt-7 max-w-3xl text-lg leading-8 text-muted sm:text-xl sm:leading-9">
               {article.description}
             </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              {article.keywords.slice(0, 5).map((keyword) => (
-                <span
-                  className="rounded-full border border-primary/10 bg-white px-4 py-2 text-sm font-semibold text-primary shadow-sm"
-                  key={keyword}
-                >
-                  {keyword}
-                </span>
-              ))}
-            </div>
           </div>
 
           <div className="rounded-[2rem] border border-border/80 bg-white p-6 shadow-[0_30px_90px_rgba(15,23,42,0.12)]">
@@ -91,6 +85,29 @@ export function SeoInsightArticle({ article }: SeoInsightArticleProps) {
           </div>
         </div>
       </section>
+
+      {article.keywords.length ? (
+        <section className="border-y border-border/70 bg-white py-10 sm:py-12">
+          <div className="mx-auto w-full max-w-7xl px-6 lg:px-8">
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-secondary">
+              Insight
+            </p>
+            <h2 className="mt-3 text-2xl font-semibold text-foreground sm:text-3xl">
+              相關主題
+            </h2>
+            <div className="mt-6 flex flex-wrap gap-2.5">
+              {article.keywords.map((keyword) => (
+                <span
+                  className="rounded-full border border-primary/10 bg-[#eef4f7] px-4 py-2 text-sm font-semibold text-primary hover:border-primary/25 hover:bg-[#e7f0f4]"
+                  key={keyword}
+                >
+                  {keyword}
+                </span>
+              ))}
+            </div>
+          </div>
+        </section>
+      ) : null}
 
       {leadSection ? (
         <section className="bg-white py-20 sm:py-24">
