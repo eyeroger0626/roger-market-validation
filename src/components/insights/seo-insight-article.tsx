@@ -9,6 +9,7 @@ type SeoInsightArticleProps = {
 };
 
 export function SeoInsightArticle({ article }: SeoInsightArticleProps) {
+  const isLongform = article.readingMode === "longform";
   const contentSections = article.sections.filter(
     (section) =>
       section.title !== "主要關鍵字" && section.title !== "關鍵字",
@@ -23,7 +24,7 @@ export function SeoInsightArticle({ article }: SeoInsightArticleProps) {
     return index >= 0 ? `article-section-${index + 1}` : undefined;
   };
 
-  const renderParagraphs = (
+  const renderDefaultParagraphs = (
     section: InsightArticle["sections"][number],
   ) =>
     section.paragraphs.map((paragraph, index) => (
@@ -44,6 +45,132 @@ export function SeoInsightArticle({ article }: SeoInsightArticleProps) {
         ) : null}
       </div>
     ));
+
+  const renderLongformParagraphs = (
+    section: InsightArticle["sections"][number],
+  ) => {
+    const blocks: Array<{
+      kind: "paragraph" | "flow" | "checklist";
+      items: string[];
+    }> = [];
+    let index = 0;
+
+    while (index < section.paragraphs.length) {
+      const paragraph = section.paragraphs[index];
+
+      if (paragraph.startsWith("□")) {
+        const items: string[] = [];
+
+        while (
+          index < section.paragraphs.length &&
+          section.paragraphs[index].startsWith("□")
+        ) {
+          items.push(section.paragraphs[index].replace(/^□\s*/, ""));
+          index += 1;
+        }
+
+        blocks.push({ kind: "checklist", items });
+        continue;
+      }
+
+      if (
+        paragraph === "↓" ||
+        section.paragraphs[index + 1] === "↓"
+      ) {
+        const items: string[] = [paragraph];
+        index += 1;
+
+        while (
+          index < section.paragraphs.length &&
+          (section.paragraphs[index] === "↓" ||
+            section.paragraphs[index - 1] === "↓")
+        ) {
+          items.push(section.paragraphs[index]);
+          index += 1;
+        }
+
+        blocks.push({ kind: "flow", items });
+        continue;
+      }
+
+      const items = [paragraph];
+      index += 1;
+
+      while (index < section.paragraphs.length && items.length < 3) {
+        const next = section.paragraphs[index];
+        const nextStartsFlow = section.paragraphs[index + 1] === "↓";
+
+        if (next.startsWith("□") || next === "↓" || nextStartsFlow) {
+          break;
+        }
+
+        items.push(next);
+        index += 1;
+      }
+
+      blocks.push({ kind: "paragraph", items });
+    }
+
+    return blocks.map((block, blockIndex) => {
+      if (block.kind === "checklist") {
+        return (
+          <ul
+            className="mb-6 grid gap-3 rounded-[1.1rem] border border-border bg-background p-4 text-base leading-[1.9] last:mb-0 lg:text-lg"
+            key={`checklist-${blockIndex}`}
+          >
+            {block.items.map((item) => (
+              <li className="flex items-start gap-3" key={item}>
+                <CheckCircle2
+                  aria-hidden="true"
+                  className="mt-1 h-4 w-4 shrink-0 text-secondary"
+                />
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        );
+      }
+
+      if (block.kind === "flow") {
+        return (
+          <div
+            className="mb-6 flex flex-col items-center gap-1 rounded-[1.1rem] border border-primary/10 bg-background px-4 py-5 text-center text-base font-semibold leading-[1.9] text-primary last:mb-0 lg:text-lg"
+            key={`flow-${blockIndex}`}
+          >
+            {block.items.map((item, itemIndex) =>
+              item === "↓" ? (
+                <span
+                  aria-hidden="true"
+                  className="text-xl leading-none text-secondary"
+                  key={`arrow-${itemIndex}`}
+                >
+                  ↓
+                </span>
+              ) : (
+                <span key={`${item}-${itemIndex}`}>{item}</span>
+              ),
+            )}
+          </div>
+        );
+      }
+
+      return (
+        <p
+          className="mb-6 [text-wrap:pretty] last:mb-0"
+          key={`paragraph-${blockIndex}`}
+        >
+          {block.items.join("")}
+        </p>
+      );
+    });
+  };
+
+  const renderParagraphs = (
+    section: InsightArticle["sections"][number],
+  ) =>
+    article.readingMode === "longform"
+      ? renderLongformParagraphs(section)
+      : renderDefaultParagraphs(section);
 
   const renderRelatedLinks = () =>
     article.relatedLinks?.length ? (
@@ -206,7 +333,7 @@ export function SeoInsightArticle({ article }: SeoInsightArticleProps) {
                 <h2 className="mt-3 text-2xl font-semibold leading-tight text-foreground sm:text-3xl">
                   {article.executiveSummary.intro}
                 </h2>
-                <div className="mt-6 grid gap-4 text-base leading-8 text-muted">
+                <div className="mt-6 grid gap-5 text-base leading-[1.9] text-muted lg:text-lg">
                   {article.executiveSummary.paragraphs.map((paragraph) => (
                     <p key={paragraph}>{paragraph}</p>
                   ))}
@@ -218,7 +345,11 @@ export function SeoInsightArticle({ article }: SeoInsightArticleProps) {
       ) : null}
 
       <section className="py-20 sm:py-24">
-        <div className="mx-auto grid w-full max-w-5xl gap-6 px-6 lg:px-8">
+        <div
+          className={`mx-auto grid w-full gap-8 px-6 lg:px-8 ${
+            isLongform ? "max-w-[820px]" : "max-w-5xl"
+          }`}
+        >
           {bodySections.map((section, index) => (
             <article
               className="scroll-mt-24 rounded-[1.75rem] border border-border bg-white p-6 shadow-sm sm:p-8"
@@ -233,10 +364,22 @@ export function SeoInsightArticle({ article }: SeoInsightArticleProps) {
                   <p className="text-sm font-bold text-accent">
                     {String(index + 2).padStart(2, "0")}
                   </p>
-                  <h2 className="mt-2 text-2xl font-semibold leading-tight text-foreground sm:text-3xl">
+                  <h2
+                    className={`font-semibold leading-tight text-foreground ${
+                      isLongform
+                        ? "mb-6 mt-3 text-3xl sm:text-4xl"
+                        : "mt-2 text-2xl sm:text-3xl"
+                    }`}
+                  >
                     {section.title}
                   </h2>
-                  <div className="mt-5 grid gap-4 text-base leading-8 text-muted sm:text-lg">
+                  <div
+                    className={`text-base text-muted [text-wrap:pretty] ${
+                      isLongform
+                        ? "grid gap-0 leading-[1.9] lg:text-lg"
+                        : "mt-5 grid gap-4 leading-8 sm:text-lg"
+                    }`}
+                  >
                     {renderParagraphs(section)}
                   </div>
                   {section.subsections?.length ? (
@@ -246,10 +389,22 @@ export function SeoInsightArticle({ article }: SeoInsightArticleProps) {
                           className="rounded-[1.35rem] border border-border bg-background p-5 sm:p-6"
                           key={subsection.title}
                         >
-                          <h3 className="text-xl font-semibold leading-8 text-primary">
+                          <h3
+                            className={`font-semibold text-primary ${
+                              isLongform
+                                ? "text-2xl leading-[1.5]"
+                                : "text-xl leading-8"
+                            }`}
+                          >
                             {subsection.title}
                           </h3>
-                          <div className="mt-3 grid gap-3 text-base leading-8 text-muted">
+                          <div
+                            className={`mt-4 grid gap-4 text-base text-muted [text-wrap:pretty] ${
+                              isLongform
+                                ? "leading-[1.9] lg:text-lg"
+                                : "leading-8"
+                            }`}
+                          >
                             {subsection.paragraphs.map((paragraph) => (
                               <p key={paragraph}>{paragraph}</p>
                             ))}
@@ -263,7 +418,13 @@ export function SeoInsightArticle({ article }: SeoInsightArticleProps) {
                       <p className="text-sm font-bold text-secondary">
                         {section.highlight.label}
                       </p>
-                      <p className="mt-3 text-lg font-semibold leading-8 text-primary">
+                      <p
+                        className={`mt-3 font-semibold text-primary [text-wrap:pretty] ${
+                          isLongform
+                            ? "text-xl leading-[1.8]"
+                            : "text-lg leading-8"
+                        }`}
+                      >
                         {section.highlight.text}
                       </p>
                     </aside>
@@ -310,10 +471,20 @@ export function SeoInsightArticle({ article }: SeoInsightArticleProps) {
                   ) : null}
                   {section.observation ? (
                     <aside className="mt-7 rounded-[1.35rem] border border-primary/15 bg-[#eef4f7] p-5 sm:p-6">
-                      <h3 className="text-xl font-semibold text-primary">
+                      <h3
+                        className={`font-semibold text-primary ${
+                          isLongform ? "text-2xl" : "text-xl"
+                        }`}
+                      >
                         {section.observation.title}
                       </h3>
-                      <div className="mt-4 grid gap-4 text-base leading-8 text-muted">
+                      <div
+                        className={`mt-4 grid gap-5 text-base text-muted [text-wrap:pretty] ${
+                          isLongform
+                            ? "leading-[1.9] lg:text-lg"
+                            : "leading-8"
+                        }`}
+                      >
                         {section.observation.paragraphs.map((paragraph) => (
                           <p key={paragraph}>{paragraph}</p>
                         ))}
@@ -322,17 +493,33 @@ export function SeoInsightArticle({ article }: SeoInsightArticleProps) {
                   ) : null}
                   {section.authorInsight ? (
                     <aside className="mt-7 rounded-[1.35rem] border border-primary/15 bg-[linear-gradient(135deg,#eef4f7_0%,#ffffff_100%)] p-5 sm:p-6">
-                      <h3 className="text-lg font-semibold text-primary">
+                      <h3
+                        className={`font-semibold text-primary ${
+                          isLongform ? "text-xl" : "text-lg"
+                        }`}
+                      >
                         作者觀點
                       </h3>
-                      <p className="mt-3 text-base leading-8 text-muted">
+                      <p
+                        className={`mt-3 text-base text-muted [text-wrap:pretty] ${
+                          isLongform
+                            ? "leading-[1.9] lg:text-lg"
+                            : "leading-8"
+                        }`}
+                      >
                         {section.authorInsight}
                       </p>
                     </aside>
                   ) : null}
                   {section.summary ? (
                     <div className="mt-7 border-t border-border pt-5">
-                      <p className="text-base font-semibold leading-8 text-primary">
+                      <p
+                        className={`font-semibold text-primary [text-wrap:pretty] ${
+                          isLongform
+                            ? "text-lg leading-[1.9]"
+                            : "text-base leading-8"
+                        }`}
+                      >
                         <span className="text-secondary">本章重點：</span>
                         {section.summary}
                       </p>
@@ -392,10 +579,22 @@ export function SeoInsightArticle({ article }: SeoInsightArticleProps) {
                   className="rounded-[1.5rem] border border-border bg-white p-6 shadow-sm sm:p-8"
                   key={faq.question}
                 >
-                  <h3 className="text-xl font-semibold leading-8 text-foreground">
+                  <h3
+                    className={`font-semibold text-foreground ${
+                      isLongform
+                        ? "text-2xl leading-[1.5]"
+                        : "text-xl leading-8"
+                    }`}
+                  >
                     {faq.question}
                   </h3>
-                  <p className="mt-4 text-base leading-8 text-muted sm:text-lg">
+                  <p
+                    className={`mt-4 text-base text-muted [text-wrap:pretty] ${
+                      isLongform
+                        ? "leading-[1.9] lg:text-lg"
+                        : "leading-8 sm:text-lg"
+                    }`}
+                  >
                     {faq.answer}
                   </p>
                   {faq.targetTitle && getSectionId(faq.targetTitle) ? (

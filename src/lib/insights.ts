@@ -4,6 +4,7 @@ export type InsightArticle = {
   description: string;
   eyebrow: string;
   keywords: string[];
+  readingMode?: "default" | "longform";
   toc?: {
     title: string;
     intro: string;
@@ -5085,6 +5086,7 @@ export const insightArticles: InsightArticle[] = [
     description:
       "製造業海外獲客不是單純參展、上阿里巴巴或寄開發信，而是建立一套能持續取得海外 B2B 詢盤與買家信任的系統。本文完整解析海外市場驗證、探廠短影音、Google SEO、海外廣告與詢盤轉換流程，協助台灣工廠理解 2026 年外銷開發的新模式。",
     eyebrow: "Manufacturing Overseas Lead Generation",
+    readingMode: "longform",
     keywords: [
       "製造業海外獲客",
       "製造業海外獲客系統",
@@ -6003,7 +6005,7 @@ export const insightArticles: InsightArticle[] = [
           "面對 AI 搜尋，工廠需要清楚、完整且可信的結構化內容，才能提高被理解與推薦的機會。",
       },
       {
-        title: "二十二、海外獲客 Checklist（Google 非常喜歡）",
+        title: "二十二、海外獲客 Checklist",
         paragraphs: [
           "你的工廠目前做到哪一步？",
           "可以利用以下 Checklist，快速檢視目前的海外市場準備程度。",
