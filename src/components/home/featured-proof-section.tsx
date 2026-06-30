@@ -48,6 +48,9 @@ export function FeaturedProofSection() {
               <span className="block">讓停滯買家重新回流</span>
               <span className="block">並進入樣品付款流程</span>
             </h2>
+            <p className="mt-5 inline-flex rounded-full border border-primary/15 bg-primary/5 px-4 py-2 text-sm font-semibold leading-6 text-primary">
+              驗證結果：成功重新建立海外買家信任，並促成樣品合作。
+            </p>
             <p className="mt-6 max-w-[44rem] text-lg leading-8 text-muted [text-wrap:pretty]">
               同樣的工廠、同樣的產品。當海外買家真正理解工廠實力後，原本停滯的商機，才有機會重新推進。短影音不是為了做曝光，而是把工廠實力、產能與產品優勢，轉成海外買家看得懂、願意回覆、願意索樣的信任證據。
             </p>

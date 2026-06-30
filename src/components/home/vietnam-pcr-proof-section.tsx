@@ -53,6 +53,9 @@ export function VietnamPcrProofSection() {
           <p className="mt-4 text-xl font-semibold text-white/[0.78] sm:text-2xl">
             150 USD 取得第一線市場情報
           </p>
+          <p className="mt-5 inline-flex rounded-full border border-accent/25 bg-accent/10 px-4 py-2 text-sm font-semibold leading-6 text-accent">
+            驗證結果：成功驗證市場接受度與第一線市場反饋。
+          </p>
         </div>
 
         <article className="mt-12 grid gap-8 rounded-[2rem] border border-white/[0.12] bg-white/[0.1] p-5 shadow-[0_34px_110px_rgba(0,0,0,0.26)] backdrop-blur lg:grid-cols-[minmax(0,0.45fr)_minmax(0,0.55fr)] lg:items-center lg:p-7">

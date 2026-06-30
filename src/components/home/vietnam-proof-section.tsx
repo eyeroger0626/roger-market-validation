@@ -68,6 +68,9 @@ export function VietnamProofSection() {
                 300 美金取得 129 筆 B2B 詢盤
               </span>
             </h2>
+            <p className="mt-5 inline-flex rounded-full border border-accent/25 bg-accent/10 px-4 py-2 text-sm font-semibold leading-6 text-accent">
+              驗證結果：成功取得設備商與經銷商詢盤。
+            </p>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-white/[0.68]">
               同樣的驗證流程，也能應用在設備與製造業產品。
             </p>
@@ -79,7 +82,7 @@ export function VietnamProofSection() {
                 className="rounded-[1.35rem] border border-white/10 bg-white/[0.09] p-6 shadow-[0_18px_50px_rgba(0,0,0,0.16)] backdrop-blur"
                 key={metric.label}
               >
-                <p className="text-3xl font-semibold tracking-normal text-white">
+                <p className="text-[2rem] font-semibold tracking-normal text-white">
                   {metric.value}
                 </p>
                 <p className="mt-3 text-sm font-semibold text-white/[0.58]">
