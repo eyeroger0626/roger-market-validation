@@ -90,8 +90,8 @@ export function VietnamProofSection() {
           </div>
         </div>
 
-        <article className="mt-12 grid gap-8 rounded-[2rem] border border-white/[0.12] bg-white/[0.1] p-5 shadow-[0_34px_110px_rgba(0,0,0,0.26)] backdrop-blur lg:grid-cols-[0.34fr_0.66fr] lg:items-center lg:p-6">
-          <div className="mx-auto w-full max-w-[15.5rem] rounded-[2.6rem] border border-slate-950 bg-slate-950 p-3 shadow-[0_30px_90px_rgba(0,0,0,0.28)] sm:max-w-[16.25rem]">
+        <article className="mt-12 grid gap-8 rounded-[2rem] border border-white/[0.12] bg-white/[0.1] p-5 shadow-[0_34px_110px_rgba(0,0,0,0.26)] backdrop-blur lg:grid-cols-[minmax(0,0.45fr)_minmax(0,0.55fr)] lg:items-center lg:p-6">
+          <div className="mx-auto w-full max-w-[16.25rem] rounded-[2.6rem] border border-slate-950 bg-slate-950 p-3 shadow-[0_30px_90px_rgba(0,0,0,0.28)] sm:max-w-[18rem] lg:max-w-[19rem]">
             <div className="mx-auto mb-3 h-1.5 w-16 rounded-full bg-white/20" />
             <div className="relative aspect-[9/16] overflow-hidden rounded-[1.75rem] bg-black">
               <iframe
