@@ -68,6 +68,13 @@ export type InsightArticle = {
       title: string;
       paragraphs: string[];
     }>;
+    embeddedProofs?: Array<"usa" | "vietnam" | "vietnam-pcr">;
+    contextLinks?: Array<{
+      prefix: string;
+      label: string;
+      href: string;
+      suffix?: string;
+    }>;
   }>;
 };
 
@@ -5339,6 +5346,20 @@ export const insightArticles: InsightArticle[] = [
           label: "重點觀念：",
           text: "海外買家不是因為看到廣告而成交，而是因為累積足夠信任後，才願意進入詢價、索樣與合作流程。",
         },
+        contextLinks: [
+          {
+            prefix: "若要進一步理解平台詢盤與成交之間的落差，可參考",
+            label: "阿里巴巴詢盤很多，為什麼最後沒有成交？",
+            href: "/insights/why-alibaba-inquiries-do-not-convert-to-orders",
+            suffix: "，從買家比較與信任建立角度檢視轉換問題。",
+          },
+          {
+            prefix: "展覽角色改變的完整分析，可延伸閱讀",
+            label: "參展花了幾十萬，為什麼真正成交卻越來越少？",
+            href: "/insights/why-trade-shows-generate-fewer-real-orders",
+            suffix: "。",
+          },
+        ],
       },
       {
         title: "五、製造業海外獲客不是增加曝光，而是降低買家的採購風險",
@@ -5369,6 +5390,14 @@ export const insightArticles: InsightArticle[] = [
         ],
         summary:
           "真正有效的海外獲客，是持續提供信任證據，逐步降低買家的採購疑慮。",
+        contextLinks: [
+          {
+            prefix: "關於買家如何篩選工廠與建立合作排序，可閱讀",
+            label: "海外買家不是找不到你，而是為什麼最後沒有選擇你？",
+            href: "/insights/why-overseas-buyers-do-not-choose-your-factory",
+            suffix: "。",
+          },
+        ],
       },
       {
         title: "六、海外買家的採購流程已經改變",
@@ -5471,6 +5500,26 @@ export const insightArticles: InsightArticle[] = [
         ],
         summary:
           "完整系統必須串連市場驗證、內容、搜尋、廣告、詢盤收集與後續轉換。",
+        contextLinks: [
+          {
+            prefix: "需要更深入理解搜尋如何支撐長期獲客，可參考",
+            label: "Google SEO 對製造業真的有用嗎？",
+            href: "/insights/google-seo-for-manufacturing-overseas-buyers",
+            suffix: "。",
+          },
+          {
+            prefix: "若想了解影片如何降低陌生買家的判斷成本，可閱讀",
+            label: "短影音真的能帶來海外客戶嗎？",
+            href: "/insights/can-factory-short-videos-get-overseas-buyers",
+            suffix: "。",
+          },
+          {
+            prefix: "關於詢盤來源與取得方式的完整整理，可延伸閱讀",
+            label: "製造業如何取得海外詢盤？",
+            href: "/insights/how-to-get-overseas-b2b-leads",
+            suffix: "。",
+          },
+        ],
       },
       {
         title: "九、製造業海外獲客的內容地圖：一個工廠至少需要哪些內容？",
@@ -5761,6 +5810,15 @@ export const insightArticles: InsightArticle[] = [
           label: "市場驗證的價值：",
           text: "真正有價值的，不一定是立即取得訂單，而是用較低成本提前知道市場是否有需求、買家是否有疑慮，以及是否值得擴大投入。",
         },
+        embeddedProofs: ["vietnam-pcr"],
+        contextLinks: [
+          {
+            prefix: "市場驗證也能用來提前發現認知阻力與買家疑慮，實際證據可參考",
+            label: "越南 PCR 市場驗證案例",
+            href: "/case-studies/vietnam-pcr-market-insight",
+            suffix: "。",
+          },
+        ],
       },
       {
         title: "十四、製造業海外獲客的關鍵指標：不要只看詢盤數",
@@ -5840,6 +5898,21 @@ export const insightArticles: InsightArticle[] = [
             "這個經驗說明，很多時候買家不是沒有需求，而是還沒有足夠理由相信你。製造業海外獲客真正要補上的，正是這段信任建立的過程。",
           ],
         },
+        embeddedProofs: ["usa", "vietnam"],
+        contextLinks: [
+          {
+            prefix: "食品原料的小額市場測試與樣品付款過程，詳見",
+            label: "美國食品海外獲客案例",
+            href: "/case-studies/us-food-ingredient-market-validation",
+            suffix: "。",
+          },
+          {
+            prefix: "設備產業如何透過在地語言與應用情境取得詢盤，可參考",
+            label: "越南設備海外獲客案例",
+            href: "/case-studies/vietnam-vacuum-packaging-market-validation",
+            suffix: "。",
+          },
+        ],
       },
       {
         title: "十六、哪些產業適合製造業海外獲客？",

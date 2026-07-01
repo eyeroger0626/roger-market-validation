@@ -2,6 +2,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { MarketValidationAuthorBlock } from "@/components/author/market-validation-author-block";
+import { FeaturedProofSection } from "@/components/home/featured-proof-section";
+import { VietnamPcrProofSection } from "@/components/home/vietnam-pcr-proof-section";
+import { VietnamProofSection } from "@/components/home/vietnam-proof-section";
 import type { InsightArticle } from "@/lib/insights";
 
 type SeoInsightArticleProps = {
@@ -15,6 +18,20 @@ export function SeoInsightArticle({ article }: SeoInsightArticleProps) {
       section.title !== "主要關鍵字" && section.title !== "關鍵字",
   );
   const [leadSection, ...bodySections] = contentSections;
+  const pillarSlug = "what-is-manufacturing-overseas-lead-generation";
+  const pillarHref = `/insights/${pillarSlug}`;
+  const pillarAnchors = [
+    "製造業海外獲客完整指南",
+    "製造業海外獲客系統",
+    "海外市場驗證到詢盤轉換的完整流程",
+    "2026 製造業海外獲客指南",
+  ];
+  const pillarBacklinkSectionIndex =
+    article.slug === pillarSlug || bodySections.length === 0
+      ? -1
+      : Math.min(bodySections.length - 1, 1 + (article.slug.length % 3));
+  const pillarAnchor =
+    pillarAnchors[article.slug.length % pillarAnchors.length];
   const ctaTitle = "建立製造業海外獲客系統";
   const ctaDescription =
     "從海外市場驗證開始，串連探廠短影音、Google SEO、海外廣告與內容行銷，持續累積海外買家與 B2B 詢盤。";
@@ -54,6 +71,48 @@ export function SeoInsightArticle({ article }: SeoInsightArticleProps) {
       items: string[];
     }> = [];
     let index = 0;
+    const composeNaturalParagraph = (items: string[]) => {
+      let result = "";
+
+      for (let itemIndex = 0; itemIndex < items.length; itemIndex += 1) {
+        const item = items[itemIndex];
+        const nextItem = items[itemIndex + 1];
+        result +=
+          item.endsWith("。") && nextItem?.startsWith("而是")
+            ? `${item.slice(0, -1)}，`
+            : item;
+
+        if (!item.endsWith("：")) {
+          continue;
+        }
+
+        const shortItems: string[] = [];
+        let nextIndex = itemIndex + 1;
+
+        while (nextIndex < items.length) {
+          const candidate = items[nextIndex];
+          const isShortListItem =
+            candidate.endsWith("。") &&
+            candidate.length <= 18 &&
+            !candidate.includes("，") &&
+            !candidate.includes("？");
+
+          if (!isShortListItem) {
+            break;
+          }
+
+          shortItems.push(candidate.slice(0, -1));
+          nextIndex += 1;
+        }
+
+        if (shortItems.length >= 2) {
+          result += `${shortItems.join("、")}。`;
+          itemIndex = nextIndex - 1;
+        }
+      }
+
+      return result;
+    };
 
     while (index < section.paragraphs.length) {
       const paragraph = section.paragraphs[index];
@@ -96,7 +155,13 @@ export function SeoInsightArticle({ article }: SeoInsightArticleProps) {
       const items = [paragraph];
       index += 1;
 
-      while (index < section.paragraphs.length && items.length < 3) {
+      while (index < section.paragraphs.length) {
+        const itemLimit = items.some((item) => item.endsWith("：")) ? 7 : 4;
+
+        if (items.length >= itemLimit) {
+          break;
+        }
+
         const next = section.paragraphs[index];
         const nextStartsFlow = section.paragraphs[index + 1] === "↓";
 
@@ -159,7 +224,7 @@ export function SeoInsightArticle({ article }: SeoInsightArticleProps) {
           className="mb-6 [text-wrap:pretty] last:mb-0"
           key={`paragraph-${blockIndex}`}
         >
-          {block.items.join("")}
+          {composeNaturalParagraph(block.items)}
         </p>
       );
     });
@@ -197,6 +262,20 @@ export function SeoInsightArticle({ article }: SeoInsightArticleProps) {
         </div>
       </section>
     ) : null;
+
+  const renderEmbeddedProof = (
+    proof: "usa" | "vietnam" | "vietnam-pcr",
+  ) => {
+    if (proof === "usa") {
+      return <FeaturedProofSection />;
+    }
+
+    if (proof === "vietnam") {
+      return <VietnamProofSection />;
+    }
+
+    return <VietnamPcrProofSection />;
+  };
 
   return (
     <main className="bg-background">
@@ -351,16 +430,16 @@ export function SeoInsightArticle({ article }: SeoInsightArticleProps) {
           }`}
         >
           {bodySections.map((section, index) => (
-            <article
-              className="scroll-mt-24 rounded-[1.75rem] border border-border bg-white p-6 shadow-sm sm:p-8"
-              id={`article-section-${index + 2}`}
-              key={section.title}
-            >
-              <div className="flex items-start gap-4">
-                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-background text-accent">
-                  <CheckCircle2 aria-hidden="true" className="h-5 w-5" />
-                </div>
-                <div>
+            <div className="contents" key={section.title}>
+              <article
+                className="scroll-mt-24 rounded-[1.75rem] border border-border bg-white p-6 shadow-sm sm:p-8"
+                id={`article-section-${index + 2}`}
+              >
+                <div className="flex items-start gap-4">
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-background text-accent">
+                    <CheckCircle2 aria-hidden="true" className="h-5 w-5" />
+                  </div>
+                  <div>
                   <p className="text-sm font-bold text-accent">
                     {String(index + 2).padStart(2, "0")}
                   </p>
@@ -382,6 +461,25 @@ export function SeoInsightArticle({ article }: SeoInsightArticleProps) {
                   >
                     {renderParagraphs(section)}
                   </div>
+                  {section.contextLinks?.length ? (
+                    <div className="mt-7 grid gap-3">
+                      {section.contextLinks.map((link) => (
+                        <p
+                          className="rounded-[1.1rem] border border-primary/10 bg-background px-5 py-4 text-base leading-8 text-muted [text-wrap:pretty] lg:text-lg"
+                          key={link.href}
+                        >
+                          {link.prefix}
+                          <Link
+                            className="font-semibold text-primary underline decoration-secondary/50 underline-offset-4 hover:text-secondary"
+                            href={link.href}
+                          >
+                            {link.label}
+                          </Link>
+                          {link.suffix}
+                        </p>
+                      ))}
+                    </div>
+                  ) : null}
                   {section.subsections?.length ? (
                     <div className="mt-7 grid gap-5">
                       {section.subsections.map((subsection) => (
@@ -511,6 +609,18 @@ export function SeoInsightArticle({ article }: SeoInsightArticleProps) {
                       </p>
                     </aside>
                   ) : null}
+                  {index === pillarBacklinkSectionIndex ? (
+                    <p className="mt-7 rounded-[1.1rem] border border-primary/10 bg-[#eef4f7] px-5 py-4 text-base leading-8 text-muted [text-wrap:pretty]">
+                      如果你想把本文討論的主題放回完整海外開發流程，可以延伸閱讀
+                      <Link
+                        className="mx-1 font-semibold text-primary underline decoration-secondary/50 underline-offset-4 hover:text-secondary"
+                        href={pillarHref}
+                      >
+                        {pillarAnchor}
+                      </Link>
+                      ，了解市場驗證、內容建立、Google SEO、海外廣告與詢盤轉換如何彼此串連。
+                    </p>
+                  ) : null}
                   {section.summary ? (
                     <div className="mt-7 border-t border-border pt-5">
                       <p
@@ -525,9 +635,18 @@ export function SeoInsightArticle({ article }: SeoInsightArticleProps) {
                       </p>
                     </div>
                   ) : null}
+                  </div>
                 </div>
-              </div>
-            </article>
+              </article>
+              {section.embeddedProofs?.map((proof) => (
+                <div
+                  className="relative left-1/2 w-[min(960px,calc(100vw-2rem))] -translate-x-1/2 overflow-hidden rounded-[2rem] border border-border shadow-[0_28px_90px_rgba(15,23,42,0.14)] [&>section]:!py-16"
+                  key={`${section.title}-${proof}`}
+                >
+                  {renderEmbeddedProof(proof)}
+                </div>
+              ))}
+            </div>
           ))}
         </div>
       </section>
