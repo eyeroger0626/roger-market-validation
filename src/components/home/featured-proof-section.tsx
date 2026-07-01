@@ -87,19 +87,19 @@ export function FeaturedProofSection() {
             </div>
           </div>
 
-          <div className="p-2 lg:p-5">
+          <div className="min-w-0 p-2 lg:p-5">
             <p className="text-sm font-semibold text-secondary">
               短影音不是曝光，而是信任建立
             </p>
-            <h3 className="mt-2 text-[1.65rem] font-semibold leading-tight text-foreground sm:text-3xl lg:text-[1.85rem] xl:text-[2.1rem]">
-              <span className="block lg:whitespace-nowrap">
+            <h3 className="mt-2 text-[1.65rem] font-semibold leading-tight text-foreground [text-wrap:pretty] sm:text-3xl lg:text-[1.85rem] xl:text-[2.1rem]">
+              <span className="block">
                 買家不是看到網站或名片就會回覆你
               </span>
-              <span className="block lg:whitespace-nowrap">
+              <span className="block">
                 而是因為信任你才願意接洽
               </span>
             </h3>
-            <div className="mt-5 grid max-w-[48rem] gap-3 text-base leading-8 text-muted [text-wrap:pretty] sm:text-[1.05rem] sm:leading-9">
+            <div className="mt-5 grid max-w-none gap-3 text-base leading-[1.8] text-muted [text-wrap:pretty] sm:text-[1.05rem]">
               <p>
                 這次協助的是南部珍珠奶茶供應鏈。一位美國採購商兩週前已透過阿里國際站與工廠接觸，但後續沒有進一步推進。
               </p>

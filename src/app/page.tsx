@@ -5,6 +5,7 @@ import { FeaturedInsightsSection } from "@/components/home/featured-insights-sec
 import { FeaturedProofSection } from "@/components/home/featured-proof-section";
 import { HeroSection } from "@/components/home/hero-section";
 import { MarketValidationProgramSection } from "@/components/home/market-validation-program-section";
+import { PillarGuideSection } from "@/components/home/pillar-guide-section";
 import { ThirdPartyTrustSection } from "@/components/home/third-party-trust-section";
 import { VietnamPcrProofSection } from "@/components/home/vietnam-pcr-proof-section";
 import { VietnamProofSection } from "@/components/home/vietnam-proof-section";
@@ -21,6 +22,7 @@ export default function HomePage() {
       <ThirdPartyTrustSection />
       <MarketValidationProgramSection />
       <VietnamPcrProofSection />
+      <PillarGuideSection />
       <AboutCredibilitySection />
       <WhyUsSection />
       <FeaturedInsightsSection />

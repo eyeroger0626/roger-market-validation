@@ -4,10 +4,10 @@ import { CheckCircle2 } from "lucide-react";
 import { LightboxImage } from "@/components/ui/lightbox-image";
 
 const validationPoints = [
-  "找出越南市場對 PCR 材料的信任門檻",
-  "驗證當地買家對原生料 HDPE 的偏好",
-  "取得海外買家主動詢問與 WhatsApp 聯絡方式",
-  "協助企業調整後續市場教育與開發策略",
+  "找出 PCR 信任門檻",
+  "驗證 HDPE 偏好",
+  "取得 WhatsApp 詢問",
+  "調整市場教育策略",
 ];
 
 const evidenceCards = [
@@ -72,11 +72,11 @@ export function VietnamPcrProofSection() {
             </div>
           </div>
 
-          <div className="p-2 lg:p-5">
+          <div className="min-w-0 p-2 lg:p-5">
             <p className="text-sm font-semibold uppercase tracking-[0.18em] text-accent">
               Market Insight Case
             </p>
-            <div className="mt-4 grid max-w-[48rem] gap-4 text-base leading-8 text-white/[0.72] sm:text-lg sm:leading-9">
+            <div className="mt-4 grid max-w-none gap-4 text-base leading-[1.8] text-white/[0.72] [text-wrap:pretty] sm:text-lg">
               <p>
                 我們協助台灣 PCR
                 再生塑膠材料製造商，以越南市場為目標，透過探廠短影音、越南語內容、海外廣告與留言互動，進行低成本市場驗證。

@@ -107,20 +107,15 @@ export function VietnamProofSection() {
             </div>
           </div>
 
-          <div className="p-2 lg:p-5">
+          <div className="min-w-0 p-2 lg:p-5">
             <p className="text-sm font-semibold uppercase tracking-[0.18em] text-accent">
               Short Video Proof
             </p>
             <h3 className="mt-3 text-3xl font-semibold leading-tight text-white sm:text-4xl">
               越南設備詢盤：短影音讓設備需求被看見
             </h3>
-            <p className="mt-5 max-w-[46rem] text-[1.03rem] leading-8 text-white/[0.7] [text-wrap:pretty] sm:text-lg sm:leading-9">
-              <span className="lg:block">
-                透過越南語短影音與小額廣告測試，將包裝設備、真空封口機與相關應用場景轉成
-              </span>
-              <span className="lg:block">
-                當地買家看得懂的內容，進一步取得設備批發商、包裝材料商與潛在經銷商的詢盤回應。
-              </span>
+            <p className="mt-5 max-w-none text-[1.03rem] leading-[1.8] text-white/[0.7] [text-wrap:pretty] sm:text-lg">
+              透過越南語短影音與小額廣告測試，將包裝設備、真空封口機與相關應用場景轉成當地買家看得懂的內容，進一步取得設備批發商、包裝材料商與潛在經銷商的詢盤回應。
             </p>
             <div className="mt-6 grid gap-3">
               {storyPoints.map((point) => (
