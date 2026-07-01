@@ -5,6 +5,7 @@ import { MarketValidationAuthorBlock } from "@/components/author/market-validati
 import { FeaturedProofSection } from "@/components/home/featured-proof-section";
 import { VietnamPcrProofSection } from "@/components/home/vietnam-pcr-proof-section";
 import { VietnamProofSection } from "@/components/home/vietnam-proof-section";
+import { ReadingProgress } from "@/components/insights/reading-progress";
 import type { InsightArticle } from "@/lib/insights";
 
 type SeoInsightArticleProps = {
@@ -279,6 +280,7 @@ export function SeoInsightArticle({ article }: SeoInsightArticleProps) {
 
   return (
     <main className="bg-background">
+      {article.showReadingProgress ? <ReadingProgress /> : null}
       <section className="relative overflow-hidden bg-[radial-gradient(circle_at_20%_8%,rgba(201,151,74,0.18),transparent_28%),linear-gradient(180deg,#ffffff_0%,#f3f7fa_100%)] py-20 sm:py-24 lg:py-28">
         <div className="mx-auto grid w-full max-w-7xl gap-10 px-6 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:px-8">
           <div>
@@ -734,6 +736,44 @@ export function SeoInsightArticle({ article }: SeoInsightArticleProps) {
       {article.relatedLinksPlacement === "afterFaq"
         ? renderRelatedLinks()
         : null}
+
+      {article.adjacentArticles ? (
+        <nav
+          aria-label="文章導覽"
+          className="border-t border-border bg-white py-12"
+        >
+          <div className="mx-auto grid w-full max-w-5xl gap-4 px-6 sm:grid-cols-2 lg:px-8">
+            {article.adjacentArticles.previous ? (
+              <Link
+                className="rounded-[1.25rem] border border-border bg-background p-5 transition hover:border-primary/30 hover:shadow-sm"
+                href={article.adjacentArticles.previous.href}
+              >
+                <span className="text-sm font-semibold text-secondary">
+                  上一篇
+                </span>
+                <span className="mt-2 block font-semibold leading-7 text-primary">
+                  {article.adjacentArticles.previous.label}
+                </span>
+              </Link>
+            ) : (
+              <span />
+            )}
+            {article.adjacentArticles.next ? (
+              <Link
+                className="rounded-[1.25rem] border border-border bg-background p-5 text-left transition hover:border-primary/30 hover:shadow-sm sm:text-right"
+                href={article.adjacentArticles.next.href}
+              >
+                <span className="text-sm font-semibold text-secondary">
+                  下一篇
+                </span>
+                <span className="mt-2 block font-semibold leading-7 text-primary">
+                  {article.adjacentArticles.next.label}
+                </span>
+              </Link>
+            ) : null}
+          </div>
+        </nav>
+      ) : null}
 
       <MarketValidationAuthorBlock />
 
